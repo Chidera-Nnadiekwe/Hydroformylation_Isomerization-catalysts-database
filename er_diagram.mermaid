@@ -1,0 +1,692 @@
+erDiagram
+
+%% ============================================================
+%% HYDROFORMYLATION & ISOMERIZATION R&D DATABASE
+%% Crow's-Foot Entity-Relationship Diagram
+%% Covers: Catalysts, Reactions, Assays, Kinetics, DFT, Scale-up
+%% ============================================================
+
+%% ─────────────────────────────────────────
+%% CORE REFERENCE ENTITIES
+%% ─────────────────────────────────────────
+
+METAL_CENTER {
+    int     metal_id        PK
+    string  symbol
+    string  name
+    int     atomic_number
+    string  common_oxidation_states
+    string  notes
+}
+
+LIGAND {
+    int     ligand_id       PK
+    string  ligand_name
+    string  abbreviation
+    string  ligand_class        "phosphine|NHC|diphosphine|bisphosphite|etc"
+    string  donor_atoms
+    float   cone_angle_deg
+    float   tolman_electronic_param
+    float   buried_volume_pct
+    string  smiles
+    string  inchi_key
+    string  cas_number
+    string  commercial_source
+    string  synthesis_ref
+}
+
+SOLVENT {
+    int     solvent_id      PK
+    string  solvent_name
+    string  abbreviation
+    string  smiles
+    float   boiling_point_c
+    float   dielectric_constant
+    string  polarity_class
+}
+
+SUBSTRATE {
+    int     substrate_id    PK
+    string  substrate_name
+    string  smiles
+    string  inchi_key
+    string  cas_number
+    string  substrate_class     "internal_olefin|terminal_olefin|diene|other"
+    int     carbon_chain_length
+    string  functional_groups
+    float   molecular_weight_gmol
+    string  supplier
+    float   purity_pct
+}
+
+PRODUCT {
+    int     product_id      PK
+    string  product_name
+    string  smiles
+    string  inchi_key
+    string  cas_number
+    string  product_type        "linear_aldehyde|branched_aldehyde|alcohol|alkane|isomerized_olefin"
+    float   molecular_weight_gmol
+}
+
+LITERATURE_REF {
+    int     ref_id          PK
+    string  doi
+    string  title
+    string  authors
+    string  journal
+    int     year
+    int     volume
+    string  pages
+    string  abstract_summary
+    string  ref_type            "journal|patent|conference|thesis|internal_report"
+    string  patent_number
+    string  assignee
+}
+
+RESEARCHER {
+    int     researcher_id   PK
+    string  first_name
+    string  last_name
+    string  email
+    string  orcid
+    string  affiliation
+    string  role                "PI|postdoc|PhD_student|engineer|analyst"
+    date    joined_date
+}
+
+%% ─────────────────────────────────────────
+%% CATALYST ENTITIES
+%% ─────────────────────────────────────────
+
+PRECATALYST {
+    int     precatalyst_id  PK
+    string  catalyst_name
+    string  abbreviation
+    string  catalyst_type       "homogeneous|heterogeneous|immobilized|nanoparticle"
+    string  reaction_class      "hydroformylation|isomerization|tandem_iso_hydroformylation"
+    int     metal_id        FK
+    string  oxidation_state
+    string  coordination_geometry
+    string  smiles
+    string  inchi_key
+    string  cas_number
+    float   molecular_weight_gmol
+    string  color
+    string  physical_form        "solid|solution|suspension"
+    float   purity_pct
+    string  synthesis_method     "commercial|in_situ|preformed"
+    string  storage_conditions
+    string  hazard_class
+    int     primary_ref_id  FK
+    date    date_registered
+    int     registered_by   FK
+    string  internal_code
+    string  notes
+}
+
+PRECATALYST_LIGAND {
+    int     pl_id           PK
+    int     precatalyst_id  FK
+    int     ligand_id       FK
+    int     stoichiometry
+    string  binding_mode        "monodentate|bidentate|bridging"
+    string  notes
+}
+
+CATALYST_SUPPORT {
+    int     support_id      PK
+    string  support_name
+    string  support_type        "silica|alumina|polymer|MOF|carbon|none"
+    float   surface_area_m2g
+    float   pore_volume_cm3g
+    float   avg_pore_size_nm
+    string  functionalization
+    string  supplier
+}
+
+SUPPORTED_CATALYST {
+    int     supported_cat_id    PK
+    int     precatalyst_id      FK
+    int     support_id          FK
+    float   metal_loading_wt_pct
+    string  immobilization_method   "covalent|physisorption|encapsulation|ionic"
+    float   leaching_test_ppm
+    string  notes
+}
+
+CATALYST_STABILITY {
+    int     stability_id    PK
+    int     precatalyst_id  FK
+    int     assay_id        FK
+    float   half_life_h
+    string  deactivation_mode   "ligand_dissociation|sintering|poisoning|oxidation|leaching"
+    float   residual_activity_pct
+    int     recycle_number
+    float   activity_after_recycle_pct
+    string  notes
+}
+
+%% ─────────────────────────────────────────
+%% REACTION & ASSAY ENTITIES
+%% ─────────────────────────────────────────
+
+REACTION_PROTOCOL {
+    int     protocol_id     PK
+    string  protocol_name
+    string  reaction_type       "hydroformylation|isomerization|tandem"
+    string  reactor_mode        "batch|continuous_flow|semi_batch"
+    string  reactor_type        "autoclave|CSTR|PFR|microreactor|Schlenk"
+    float   reactor_volume_mL
+    string  atmosphere          "CO_H2|H2|N2|CO|air"
+    float   co_h2_ratio
+    string  standard_workup
+    string  analysis_method     "GC|GC-MS|NMR|HPLC|ICP-MS"
+    string  internal_standard
+    int     created_by      FK
+    int     protocol_ref_id FK
+    date    created_date
+    string  version
+    string  notes
+}
+
+EXPERIMENT {
+    int     experiment_id   PK
+    string  experiment_code
+    string  title
+    string  objective
+    string  reaction_type       "hydroformylation|isomerization|tandem"
+    int     protocol_id     FK
+    int     lead_researcher FK
+    date    start_date
+    date    end_date
+    string  project_code
+    string  status              "planned|active|completed|archived"
+    string  notes
+}
+
+ASSAY {
+    int     assay_id        PK
+    int     experiment_id   FK
+    int     precatalyst_id  FK
+    int     substrate_id    FK
+    int     solvent_id      FK
+    int     protocol_id     FK
+    int     conducted_by    FK
+    date    assay_date
+    string  assay_code
+    float   temp_c
+    float   pressure_bar
+    float   catalyst_loading_mol_pct
+    float   substrate_conc_mM
+    float   solvent_volume_mL
+    float   reaction_time_h
+    float   co_partial_pressure_bar
+    float   h2_partial_pressure_bar
+    float   stirring_rpm
+    string  gas_feed_mode       "static|continuous_flow"
+    float   flow_rate_mLmin
+    string  quench_method
+    string  analysis_instrument
+    string  raw_data_file_path
+    string  status              "pending|running|completed|failed"
+    string  failure_reason
+    string  notes
+}
+
+ASSAY_ADDITIVE {
+    int     aa_id           PK
+    int     assay_id        FK
+    string  additive_name
+    string  additive_role       "cocatalyst|promoter|inhibitor|acid|base|ligand_excess"
+    float   amount_equiv
+    float   concentration_mM
+    string  notes
+}
+
+%% ─────────────────────────────────────────
+%% PERFORMANCE METRICS ENTITIES
+%% ─────────────────────────────────────────
+
+PERFORMANCE_METRICS {
+    int     metric_id       PK
+    int     assay_id        FK
+    float   conversion_pct
+    float   yield_linear_aldehyde_pct
+    float   yield_branched_aldehyde_pct
+    float   yield_alcohol_pct
+    float   yield_alkane_pct
+    float   yield_isomerized_olefin_pct
+    float   lb_ratio                    "linear-to-branched ratio"
+    float   regioselectivity_pct
+    float   chemoselectivity_pct
+    float   tof_h_inv                   "turnover frequency h^-1"
+    float   ton                         "turnover number"
+    float   ee_pct                      "enantiomeric excess if chiral"
+    float   space_time_yield_g_Lh
+    float   e_factor                    "environmental factor"
+    string  calculation_method
+    string  notes
+}
+
+ISOMERIZATION_METRICS {
+    int     iso_metric_id   PK
+    int     assay_id        FK
+    float   internal_olefin_conv_pct
+    float   terminal_olefin_selectivity_pct
+    float   double_bond_migration_rate_h_inv
+    float   isomer_distribution_json    "stored as JSON string"
+    float   tof_isomerization_h_inv
+    float   ton_isomerization
+    string  notes
+}
+
+TANDEM_METRICS {
+    int     tandem_metric_id    PK
+    int     assay_id            FK
+    float   overall_aldehyde_yield_pct
+    float   internal_olefin_to_aldehyde_conv_pct
+    float   lb_ratio_from_internal
+    float   iso_step_tof_h_inv
+    float   hf_step_tof_h_inv
+    float   bottleneck_step         "isomerization|hydroformylation|none"
+    string  synergy_notes
+}
+
+SELECTIVITY_PROFILE {
+    int     selectivity_id  PK
+    int     assay_id        FK
+    int     product_id      FK
+    float   selectivity_pct
+    float   yield_pct
+    float   amount_mmol
+    string  quantification_method
+    string  notes
+}
+
+%% ─────────────────────────────────────────
+%% KINETICS ENTITIES
+%% ─────────────────────────────────────────
+
+KINETICS_STUDY {
+    int     kinetics_id     PK
+    int     experiment_id   FK
+    int     precatalyst_id  FK
+    int     substrate_id    FK
+    string  study_type          "initial_rate|progress_curve|inhibition|activation_energy"
+    string  rate_law_expression
+    float   rate_constant_k
+    string  rate_constant_units
+    float   activation_energy_kJ_mol
+    float   pre_exponential_A
+    float   reaction_order_substrate
+    float   reaction_order_co
+    float   reaction_order_h2
+    float   reaction_order_catalyst
+    string  kinetic_model        "Langmuir_Hinshelwood|Eley_Rideal|power_law|Michaelis_Menten"
+    float   r_squared
+    string  fitting_software
+    string  data_file_path
+    int     ref_id          FK
+    string  notes
+}
+
+KINETICS_DATAPOINT {
+    int     dp_id           PK
+    int     kinetics_id     FK
+    int     assay_id        FK
+    float   time_h
+    float   conversion_pct
+    float   rate_mmol_L_h
+    float   temp_c
+    float   pressure_bar
+    float   catalyst_conc_mM
+    float   substrate_conc_mM
+    float   product_conc_mM
+    string  notes
+}
+
+INHIBITION_STUDY {
+    int     inhibition_id   PK
+    int     kinetics_id     FK
+    string  inhibitor_name
+    float   inhibitor_conc_mM
+    float   ki_mM
+    string  inhibition_type     "competitive|noncompetitive|uncompetitive|mixed"
+    float   inhibition_constant
+    string  notes
+}
+
+%% ─────────────────────────────────────────
+%% FLOW CHEMISTRY ENTITIES
+%% ─────────────────────────────────────────
+
+FLOW_REACTOR_CONFIG {
+    int     config_id       PK
+    string  config_name
+    string  reactor_brand
+    string  reactor_model
+    float   channel_volume_mL
+    float   max_pressure_bar
+    float   max_temp_c
+    string  material            "stainless_steel|PTFE|glass|hastelloy"
+    string  mixing_type         "T_mixer|micromixer|static_mixer"
+    float   residence_time_s
+    string  back_pressure_regulator
+    string  pump_type           "syringe|peristaltic|HPLC"
+    string  inline_analytics    "IR|UV|Raman|pressure|GC"
+    string  notes
+}
+
+FLOW_ASSAY {
+    int     flow_assay_id   PK
+    int     assay_id        FK
+    int     config_id       FK
+    float   flow_rate_total_mLmin
+    float   catalyst_stream_conc_mM
+    float   substrate_stream_conc_mM
+    float   residence_time_min
+    float   back_pressure_bar
+    float   steady_state_time_h
+    float   productivity_g_Lh
+    float   catalyst_stability_h
+    boolean inline_analysis_used
+    string  notes
+}
+
+%% ─────────────────────────────────────────
+%% DFT / COMPUTATIONAL ENTITIES
+%% ─────────────────────────────────────────
+
+DFT_CALCULATION {
+    int     dft_id          PK
+    int     precatalyst_id  FK
+    int     ref_id          FK
+    string  software            "Gaussian|ORCA|Turbomole|ADF|VASP|CP2K"
+    string  functional          "B3LYP|PBE0|M06L|wB97X-D|TPSSh"
+    string  basis_set           "def2-TZVP|6-311G**|cc-pVTZ"
+    string  dispersion_correction "D3BJ|D3|none"
+    string  solvent_model       "PCM|SMD|COSMO|none"
+    string  calculation_type    "geometry_opt|frequency|NBO|NCI|IRC|TDDFT"
+    float   electronic_energy_hartree
+    float   zero_point_energy_hartree
+    float   thermal_correction_hartree
+    float   gibbs_free_energy_hartree
+    string  convergence_criteria
+    string  output_file_path
+    date    calc_date
+    int     calculated_by   FK
+    string  notes
+}
+
+TRANSITION_STATE {
+    int     ts_id           PK
+    int     dft_id          FK
+    string  reaction_step       "oxidative_addition|migratory_insertion|CO_insertion|reductive_elim|beta_H_elim"
+    float   activation_barrier_kJ_mol
+    float   reaction_energy_kJ_mol
+    float   imaginary_frequency_cm_inv
+    string  irc_confirmed       "yes|no|pending"
+    string  ts_structure_file
+    string  notes
+}
+
+ELECTRONIC_DESCRIPTOR {
+    int     descriptor_id   PK
+    int     dft_id          FK
+    int     ligand_id       FK
+    float   homo_energy_eV
+    float   lumo_energy_eV
+    float   homo_lumo_gap_eV
+    float   nbo_charge_metal
+    float   nbo_charge_donor_atom
+    float   wiberg_bond_order
+    float   npa_charge
+    float   delta_h_co_binding_kJ_mol
+    float   delta_g_co_binding_kJ_mol
+    float   nci_index
+    string  notes
+}
+
+QSAR_QSPR_MODEL {
+    int     model_id        PK
+    string  model_name
+    string  target_property     "TOF|TON|lb_ratio|activation_barrier|selectivity"
+    string  descriptor_set
+    string  algorithm          "MLR|PLS|RF|SVM|NN|Gaussian_process"
+    float   r2_train
+    float   r2_test
+    float   rmse_train
+    float   rmse_test
+    int     n_training_points
+    int     n_test_points
+    string  cross_validation_scheme
+    string  model_file_path
+    date    trained_date
+    int     trained_by      FK
+    string  notes
+}
+
+QSAR_DATAPOINT {
+    int     qdp_id          PK
+    int     model_id        FK
+    int     precatalyst_id  FK
+    int     assay_id        FK
+    float   experimental_value
+    float   predicted_value
+    float   residual
+    string  dataset_split       "train|test|validation"
+    string  notes
+}
+
+%% ─────────────────────────────────────────
+%% SCALE-UP & REPRODUCIBILITY ENTITIES
+%% ─────────────────────────────────────────
+
+SCALE_UP_STUDY {
+    int     scaleup_id      PK
+    int     precatalyst_id  FK
+    int     experiment_id   FK
+    string  scale_level         "lab|pilot|demo|industrial"
+    float   reactor_volume_L
+    string  reactor_type
+    float   substrate_amount_mol
+    float   catalyst_loading_mol_pct
+    float   temp_c
+    float   pressure_bar
+    float   reaction_time_h
+    float   yield_pct
+    float   lb_ratio
+    float   tof_h_inv
+    float   space_time_yield_g_Lh
+    float   catalyst_cost_USD_kg
+    float   e_factor
+    float   pmi                 "process mass intensity"
+    string  scale_up_challenges
+    int     ref_id          FK
+    date    study_date
+    string  notes
+}
+
+REPRODUCIBILITY_STUDY {
+    int     repro_id        PK
+    int     assay_id        FK
+    int     replicate_number
+    float   conversion_pct
+    float   yield_pct
+    float   lb_ratio
+    float   tof_h_inv
+    float   ton
+    string  same_lab         "yes|no"
+    string  same_operator    "yes|no"
+    float   std_dev_conversion
+    float   std_dev_yield
+    float   rsd_pct
+    string  notes
+}
+
+%% ─────────────────────────────────────────
+%% ANALYTICAL & CHARACTERIZATION ENTITIES
+%% ─────────────────────────────────────────
+
+CATALYST_CHARACTERIZATION {
+    int     char_id         PK
+    int     precatalyst_id  FK
+    string  technique           "XRD|XPS|TEM|SEM|IR|NMR|ICP-MS|TGA|BET|Raman|EXAFS"
+    string  instrument_model
+    string  measurement_conditions
+    string  key_findings
+    string  data_file_path
+    date    measurement_date
+    int     measured_by     FK
+    int     ref_id          FK
+    string  notes
+}
+
+NMR_DATA {
+    int     nmr_id          PK
+    int     char_id         FK
+    string  nucleus             "1H|13C|31P|103Rh|59Co"
+    float   field_strength_MHz
+    string  solvent
+    float   temp_c
+    string  key_shifts_ppm      "JSON list of {assignment, shift, multiplicity}"
+    string  coupling_constants_Hz
+    string  spectrum_file_path
+    string  notes
+}
+
+IR_DATA {
+    int     ir_id           PK
+    int     char_id         FK
+    string  technique           "ATR-IR|transmission_IR|in_situ_HP_IR"
+    float   co_stretch_cm_inv
+    float   rh_co_stretch_cm_inv
+    string  key_bands_json
+    string  spectrum_file_path
+    string  notes
+}
+
+HP_IR_INSITU {
+    int     hpir_id         PK
+    int     assay_id        FK
+    float   pressure_bar
+    float   temp_c
+    float   co_h2_ratio
+    float   co_stretch_cm_inv
+    string  active_species_assigned
+    string  spectrum_file_path
+    string  notes
+}
+
+%% ─────────────────────────────────────────
+%% AUDIT & DATA MANAGEMENT
+%% ─────────────────────────────────────────
+
+AUDIT_LOG {
+    int     log_id          PK
+    string  table_name
+    int     record_id
+    string  action              "INSERT|UPDATE|DELETE"
+    int     performed_by    FK
+    timestamp action_timestamp
+    string  old_values_json
+    string  new_values_json
+    string  ip_address
+}
+
+DATA_FILE {
+    int     file_id         PK
+    int     assay_id        FK
+    string  file_name
+    string  file_type           "GC_raw|GC_processed|NMR_raw|DFT_output|HP_IR|HPLC|image"
+    string  file_path
+    float   file_size_MB
+    string  checksum_sha256
+    date    uploaded_date
+    int     uploaded_by     FK
+    string  notes
+}
+
+BENCHMARK_COMPARISON {
+    int     bench_id        PK
+    string  benchmark_name
+    int     ref_precatalyst_id  FK
+    int     test_precatalyst_id FK
+    int     assay_ref_id    FK
+    int     assay_test_id   FK
+    float   tof_improvement_pct
+    float   selectivity_improvement_pct
+    float   ton_improvement_pct
+    float   lb_ratio_change
+    string  conclusion
+    int     compared_by     FK
+    date    comparison_date
+    string  notes
+}
+
+%% ============================================================
+%% RELATIONSHIPS
+%% ============================================================
+
+PRECATALYST ||--o{ PRECATALYST_LIGAND : "has"
+LIGAND ||--o{ PRECATALYST_LIGAND : "used_in"
+METAL_CENTER ||--o{ PRECATALYST : "centers"
+PRECATALYST ||--o| CATALYST_SUPPORT : "supported_on"
+PRECATALYST ||--|| SUPPORTED_CATALYST : "forms"
+CATALYST_SUPPORT ||--|| SUPPORTED_CATALYST : "hosts"
+LITERATURE_REF ||--o{ PRECATALYST : "referenced_by"
+RESEARCHER ||--o{ PRECATALYST : "registers"
+
+REACTION_PROTOCOL ||--o{ EXPERIMENT : "governs"
+EXPERIMENT ||--o{ ASSAY : "contains"
+PRECATALYST ||--o{ ASSAY : "tested_in"
+SUBSTRATE ||--o{ ASSAY : "used_in"
+SOLVENT ||--o{ ASSAY : "used_in"
+REACTION_PROTOCOL ||--o{ ASSAY : "applied_to"
+RESEARCHER ||--o{ ASSAY : "conducts"
+ASSAY ||--o{ ASSAY_ADDITIVE : "has"
+
+ASSAY ||--|| PERFORMANCE_METRICS : "yields"
+ASSAY ||--o| ISOMERIZATION_METRICS : "yields"
+ASSAY ||--o| TANDEM_METRICS : "yields"
+ASSAY ||--o{ SELECTIVITY_PROFILE : "produces"
+PRODUCT ||--o{ SELECTIVITY_PROFILE : "identified_in"
+
+EXPERIMENT ||--o{ KINETICS_STUDY : "includes"
+PRECATALYST ||--o{ KINETICS_STUDY : "characterized_by"
+SUBSTRATE ||--o{ KINETICS_STUDY : "studied_with"
+KINETICS_STUDY ||--o{ KINETICS_DATAPOINT : "contains"
+ASSAY ||--o{ KINETICS_DATAPOINT : "sourced_from"
+KINETICS_STUDY ||--o{ INHIBITION_STUDY : "extends"
+
+ASSAY ||--o| FLOW_ASSAY : "run_as"
+FLOW_REACTOR_CONFIG ||--o{ FLOW_ASSAY : "configures"
+
+PRECATALYST ||--o{ DFT_CALCULATION : "modeled_by"
+DFT_CALCULATION ||--o{ TRANSITION_STATE : "locates"
+DFT_CALCULATION ||--o{ ELECTRONIC_DESCRIPTOR : "provides"
+LIGAND ||--o{ ELECTRONIC_DESCRIPTOR : "described_by"
+RESEARCHER ||--o{ DFT_CALCULATION : "performs"
+
+QSAR_QSPR_MODEL ||--o{ QSAR_DATAPOINT : "trained_on"
+PRECATALYST ||--o{ QSAR_DATAPOINT : "contributes"
+ASSAY ||--o{ QSAR_DATAPOINT : "sources"
+RESEARCHER ||--o{ QSAR_QSPR_MODEL : "builds"
+
+PRECATALYST ||--o{ SCALE_UP_STUDY : "scaled"
+EXPERIMENT ||--o{ SCALE_UP_STUDY : "informs"
+ASSAY ||--o{ REPRODUCIBILITY_STUDY : "verified_by"
+
+PRECATALYST ||--o{ CATALYST_CHARACTERIZATION : "characterized_by"
+CATALYST_CHARACTERIZATION ||--o| NMR_DATA : "includes"
+CATALYST_CHARACTERIZATION ||--o| IR_DATA : "includes"
+ASSAY ||--o{ HP_IR_INSITU : "monitored_by"
+RESEARCHER ||--o{ CATALYST_CHARACTERIZATION : "performs"
+
+ASSAY ||--o{ DATA_FILE : "generates"
+RESEARCHER ||--o{ DATA_FILE : "uploads"
+PRECATALYST ||--o{ BENCHMARK_COMPARISON : "referenced_in"
+RESEARCHER ||--o{ AUDIT_LOG : "generates"
+CATALYST_STABILITY ||--|| ASSAY : "measured_in"
+PRECATALYST ||--o{ CATALYST_STABILITY : "assessed_by"
