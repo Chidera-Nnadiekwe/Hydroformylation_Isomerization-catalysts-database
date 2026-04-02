@@ -1,5 +1,8 @@
-SET search_path TO cat_rnd, public;
+USE cat_rnd;
 
+-- ======================
+-- INSERT 1: metal_center
+-- ======================
 INSERT INTO metal_center(symbol,name,atomic_number,common_oxidation_states) VALUES ('Rh','Rhodium',45,'+1,+3');
 INSERT INTO metal_center(symbol,name,atomic_number,common_oxidation_states) VALUES ('Co','Cobalt',27,'+2,+3');
 INSERT INTO metal_center(symbol,name,atomic_number,common_oxidation_states) VALUES ('Ru','Ruthenium',44,'+2,+3,+4');
@@ -8,6 +11,10 @@ INSERT INTO metal_center(symbol,name,atomic_number,common_oxidation_states) VALU
 INSERT INTO metal_center(symbol,name,atomic_number,common_oxidation_states) VALUES ('Ni','Nickel',28,'0,+2');
 INSERT INTO metal_center(symbol,name,atomic_number,common_oxidation_states) VALUES ('Fe','Iron',26,'+2,+3');
 INSERT INTO metal_center(symbol,name,atomic_number,common_oxidation_states) VALUES ('Pt','Platinum',78,'0,+2,+4');
+
+-- ======================
+-- INSERT 2: ligand
+-- ======================
 INSERT INTO ligand(ligand_name,abbreviation,ligand_class,donor_atoms,cone_angle_deg,tolman_electronic_param)
 VALUES ('Triphenylphosphine','PPh3','phosphine','P',145,2068);
 INSERT INTO ligand(ligand_name,abbreviation,ligand_class,donor_atoms,cone_angle_deg,tolman_electronic_param)
@@ -24,18 +31,10 @@ INSERT INTO ligand(ligand_name,abbreviation,ligand_class,donor_atoms,cone_angle_
 VALUES ('PCy3','PCy3','phosphine','P',170,2056);
 INSERT INTO ligand(ligand_name,abbreviation,ligand_class,donor_atoms,cone_angle_deg,tolman_electronic_param)
 VALUES ('NHC(IMes)','IMes','NHC','C',NULL,NULL);
-INSERT INTO solvent(solvent_name,abbreviation,boiling_point_c,dielectric_constant,polarity_class)
-VALUES ('Toluene','PhMe',110.6,2.38,'nonpolar');
-INSERT INTO solvent(solvent_name,abbreviation,boiling_point_c,dielectric_constant,polarity_class)
-VALUES ('Hexane','Hex',69.0,1.89,'nonpolar');
-INSERT INTO solvent(solvent_name,abbreviation,boiling_point_c,dielectric_constant,polarity_class)
-VALUES ('THF','THF',66.0,7.58,'polar_aprotic');
-INSERT INTO solvent(solvent_name,abbreviation,boiling_point_c,dielectric_constant,polarity_class)
-VALUES ('Acetonitrile','MeCN',81.6,37.5,'polar_aprotic');
-INSERT INTO solvent(solvent_name,abbreviation,boiling_point_c,dielectric_constant,polarity_class)
-VALUES ('Methanol','MeOH',64.7,32.7,'polar_protic');
-INSERT INTO solvent(solvent_name,abbreviation,boiling_point_c,dielectric_constant,polarity_class)
-VALUES ('DCM','DCM',39.6,9.1,'moderately_polar');
+
+-- ======================
+-- INSERT 3: substrate
+-- ======================
 INSERT INTO substrate(substrate_name,smiles,substrate_class,carbon_chain_length,molecular_weight_gmol,purity_pct)
 VALUES ('1-Propene','C=CC','terminal_olefin',3,42.08,99.0);
 INSERT INTO substrate(substrate_name,smiles,substrate_class,carbon_chain_length,molecular_weight_gmol,purity_pct)
@@ -48,6 +47,26 @@ INSERT INTO substrate(substrate_name,smiles,substrate_class,carbon_chain_length,
 VALUES ('2-Butene','CC=CC','internal_olefin',4,56.11,99.0);
 INSERT INTO substrate(substrate_name,smiles,substrate_class,carbon_chain_length,molecular_weight_gmol,purity_pct)
 VALUES ('Cyclohexene','C1=CCCCC1','cyclic_olefin',6,82.15,99.0);
+
+-- ======================
+-- INSERT 4: solvent
+-- ====================== 
+INSERT INTO solvent(solvent_name,abbreviation,boiling_point_c,dielectric_constant,polarity_class)
+VALUES ('Toluene','PhMe',110.6,2.38,'nonpolar');
+INSERT INTO solvent(solvent_name,abbreviation,boiling_point_c,dielectric_constant,polarity_class)
+VALUES ('Hexane','Hex',69.0,1.89,'nonpolar');
+INSERT INTO solvent(solvent_name,abbreviation,boiling_point_c,dielectric_constant,polarity_class)
+VALUES ('THF','THF',66.0,7.58,'polar_aprotic');
+INSERT INTO solvent(solvent_name,abbreviation,boiling_point_c,dielectric_constant,polarity_class)
+VALUES ('Acetonitrile','MeCN',81.6,37.5,'polar_aprotic');
+INSERT INTO solvent(solvent_name,abbreviation,boiling_point_c,dielectric_constant,polarity_class)
+VALUES ('Methanol','MeOH',64.7,32.7,'polar_protic');
+INSERT INTO solvent(solvent_name,abbreviation,boiling_point_c,dielectric_constant,polarity_class)
+VALUES ('DCM','DCM',39.6,9.1,'moderately_polar');
+
+-- ======================
+-- INSERT 5: product
+-- ======================
 INSERT INTO product(product_name,product_type,molecular_weight_gmol)
 VALUES ('Butanal','linear_aldehyde',72.11);
 INSERT INTO product(product_name,product_type,molecular_weight_gmol)
@@ -62,6 +81,10 @@ INSERT INTO product(product_name,product_type,molecular_weight_gmol)
 VALUES ('Nonanal','linear_aldehyde',142.24);
 INSERT INTO product(product_name,product_type,molecular_weight_gmol)
 VALUES ('Hexanol','alcohol',102.17);
+
+-- ======================
+-- INSERT 6: researcher
+-- ======================
 INSERT INTO researcher(first_name,last_name,email,affiliation,department,role)
 VALUES ('Robert','Franke','robert.franke@example.com','BASF','Homogeneous Catalysis','PI');
 INSERT INTO researcher(first_name,last_name,email,affiliation,department,role)
@@ -72,12 +95,20 @@ INSERT INTO researcher(first_name,last_name,email,affiliation,department,role)
 VALUES ('Jane','Smith','jane.smith@example.com','LSU','Chemistry','PhD_student');
 INSERT INTO researcher(first_name,last_name,email,affiliation,department,role)
 VALUES ('Michael','Brown','michael.brown@example.com','Dow','R&D','engineer');
+
+-- ============================
+-- INSERT 7: reaction_protocol
+-- ============================
 INSERT INTO reaction_protocol(protocol_name,reaction_type,reactor_mode,reactor_type,atmosphere,co_h2_ratio,analysis_method)
 VALUES ('Standard Rh Hydroformylation','hydroformylation','batch','autoclave','CO/H2',1.0,'GC-MS');
 INSERT INTO reaction_protocol(protocol_name,reaction_type,reactor_mode,reactor_type,atmosphere,co_h2_ratio,analysis_method)
 VALUES ('Olefin Isomerization Pd','isomerization','batch','Schlenk','N2',NULL,'GC-MS');
 INSERT INTO reaction_protocol(protocol_name,reaction_type,reactor_mode,reactor_type,atmosphere,co_h2_ratio,analysis_method)
 VALUES ('Tandem Iso-HF','tandem_iso_hydroformylation','continuous_flow','PFR','CO/H2',1.0,'GC-MS');
+
+-- ======================
+-- INSERT 8: precatalyst
+-- ======================
 INSERT INTO precatalyst(catalyst_name,abbreviation,catalyst_type,reaction_class,metal_id,oxidation_state,coordination_geometry,internal_code)
 VALUES ('Cat_1','Cat_1','immobilized','hydroformylation',2,'+1','octahedral','CAT-0001');
 INSERT INTO precatalyst(catalyst_name,abbreviation,catalyst_type,reaction_class,metal_id,oxidation_state,coordination_geometry,internal_code)
@@ -318,6 +349,10 @@ INSERT INTO precatalyst(catalyst_name,abbreviation,catalyst_type,reaction_class,
 VALUES ('Cat_119','Cat_119','nanoparticle','isomerization',2,'+1','octahedral','CAT-0119');
 INSERT INTO precatalyst(catalyst_name,abbreviation,catalyst_type,reaction_class,metal_id,oxidation_state,coordination_geometry,internal_code)
 VALUES ('Cat_120','Cat_120','heterogeneous','hydroformylation',3,'+1','octahedral','CAT-0120');
+
+-- =============================
+-- INSERT 9: precatalyst_ligand
+-- =============================
 INSERT INTO precatalyst_ligand(precatalyst_id,ligand_id,stoichiometry) VALUES (1,3,1);
 INSERT INTO precatalyst_ligand(precatalyst_id,ligand_id,stoichiometry) VALUES (2,7,1);
 INSERT INTO precatalyst_ligand(precatalyst_id,ligand_id,stoichiometry) VALUES (3,1,1);
@@ -438,6 +473,10 @@ INSERT INTO precatalyst_ligand(precatalyst_id,ligand_id,stoichiometry) VALUES (1
 INSERT INTO precatalyst_ligand(precatalyst_id,ligand_id,stoichiometry) VALUES (118,8,1);
 INSERT INTO precatalyst_ligand(precatalyst_id,ligand_id,stoichiometry) VALUES (119,3,1);
 INSERT INTO precatalyst_ligand(precatalyst_id,ligand_id,stoichiometry) VALUES (120,8,1);
+
+-- ======================
+-- INSERT 10: experiment
+-- ======================
 INSERT INTO experiment(experiment_code,title,reaction_type,protocol_id,lead_researcher,status)
 VALUES ('EXP-0001','Catalysis experiment 1','isomerization',2,1,'completed');
 INSERT INTO experiment(experiment_code,title,reaction_type,protocol_id,lead_researcher,status)
@@ -558,6 +597,10 @@ INSERT INTO experiment(experiment_code,title,reaction_type,protocol_id,lead_rese
 VALUES ('EXP-0059','Catalysis experiment 59','hydroformylation',2,1,'completed');
 INSERT INTO experiment(experiment_code,title,reaction_type,protocol_id,lead_researcher,status)
 VALUES ('EXP-0060','Catalysis experiment 60','tandem_iso_hydroformylation',1,1,'completed');
+
+-- =================
+-- INSERT 11: assay
+-- =================
 INSERT INTO assay(experiment_id,precatalyst_id,substrate_id,solvent_id,protocol_id,assay_code,temp_c,pressure_bar,catalyst_loading_mol_pct,reaction_time_h)
 VALUES (37,28,4,6,2,'ASSAY-00001',106.01,7.54,0.627,7.73);
 INSERT INTO assay(experiment_id,precatalyst_id,substrate_id,solvent_id,protocol_id,assay_code,temp_c,pressure_bar,catalyst_loading_mol_pct,reaction_time_h)
@@ -1158,6 +1201,10 @@ INSERT INTO assay(experiment_id,precatalyst_id,substrate_id,solvent_id,protocol_
 VALUES (1,47,3,2,2,'ASSAY-00299',111.65,23.17,0.397,7.15);
 INSERT INTO assay(experiment_id,precatalyst_id,substrate_id,solvent_id,protocol_id,assay_code,temp_c,pressure_bar,catalyst_loading_mol_pct,reaction_time_h)
 VALUES (49,61,1,1,3,'ASSAY-00300',64.05,11.23,0.088,1.54);
+
+-- ===============================
+-- INSERT 12: performance_metrics
+-- ===============================
 INSERT INTO performance_metrics(assay_id,conversion_pct,yield_linear_aldehyde_pct,yield_branched_aldehyde_pct,lb_ratio,tof_h_inv,ton)
 VALUES (1,87.36,50.53,18.86,2.67,626.21,2194.07);
 INSERT INTO performance_metrics(assay_id,conversion_pct,yield_linear_aldehyde_pct,yield_branched_aldehyde_pct,lb_ratio,tof_h_inv,ton)
@@ -1758,6 +1805,10 @@ INSERT INTO performance_metrics(assay_id,conversion_pct,yield_linear_aldehyde_pc
 VALUES (299,74.49,65.54,28.98,2.25,697.64,3895.84);
 INSERT INTO performance_metrics(assay_id,conversion_pct,yield_linear_aldehyde_pct,yield_branched_aldehyde_pct,lb_ratio,tof_h_inv,ton)
 VALUES (300,85.45,86.9,13.77,6.27,579.83,3016.77);
+
+-- ==========================
+-- INSERT 13: kinetics_study
+-- ==========================
 INSERT INTO kinetics_study(experiment_id,precatalyst_id,substrate_id,study_type,rate_constant_k,rate_constant_units,activation_energy_kJ_mol)
 VALUES (2,62,1,'initial_rate',1.913984,'mol L^-1 h^-1',60.63);
 INSERT INTO kinetics_study(experiment_id,precatalyst_id,substrate_id,study_type,rate_constant_k,rate_constant_units,activation_energy_kJ_mol)
@@ -1918,6 +1969,10 @@ INSERT INTO kinetics_study(experiment_id,precatalyst_id,substrate_id,study_type,
 VALUES (14,61,4,'initial_rate',1.561235,'mol L^-1 h^-1',94.52);
 INSERT INTO kinetics_study(experiment_id,precatalyst_id,substrate_id,study_type,rate_constant_k,rate_constant_units,activation_energy_kJ_mol)
 VALUES (21,21,6,'initial_rate',3.723878,'mol L^-1 h^-1',98.26);
+
+-- ===========================
+-- INSERT 14: dft_calculation
+-- ===========================
 INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
 VALUES (71,'Gaussian','B3LYP','def2-TZVP','optimization',-1479.073747,-1481.540619596649);
 INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)

@@ -98,7 +98,7 @@ CREATE TABLE solvent (
 );
 
 -- =================
--- TABLE 4: product
+-- TABLE 5: product
 -- =================
 CREATE TABLE product (
     product_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -113,7 +113,7 @@ CREATE TABLE product (
 );
 
 -- ========================
--- TABLE 5: literature_ref
+-- TABLE 6: literature_ref
 -- ========================
 CREATE TABLE literature_ref (
     ref_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
