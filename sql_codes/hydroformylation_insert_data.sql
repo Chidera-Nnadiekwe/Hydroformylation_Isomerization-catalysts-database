@@ -33,23 +33,7 @@ INSERT INTO ligand(ligand_name,abbreviation,ligand_class,donor_atoms,cone_angle_
 VALUES ('NHC(IMes)','IMes','NHC','C',NULL,NULL);
 
 -- ======================
--- INSERT 3: substrate
--- ======================
-INSERT INTO substrate(substrate_name,smiles,substrate_class,carbon_chain_length,molecular_weight_gmol,purity_pct)
-VALUES ('1-Propene','C=CC','terminal_olefin',3,42.08,99.0);
-INSERT INTO substrate(substrate_name,smiles,substrate_class,carbon_chain_length,molecular_weight_gmol,purity_pct)
-VALUES ('1-Butene','C=CCC','terminal_olefin',4,56.11,99.0);
-INSERT INTO substrate(substrate_name,smiles,substrate_class,carbon_chain_length,molecular_weight_gmol,purity_pct)
-VALUES ('1-Hexene','C=CCCCC','terminal_olefin',6,84.16,99.0);
-INSERT INTO substrate(substrate_name,smiles,substrate_class,carbon_chain_length,molecular_weight_gmol,purity_pct)
-VALUES ('1-Octene','C=CCCCCCC','terminal_olefin',8,112.21,99.0);
-INSERT INTO substrate(substrate_name,smiles,substrate_class,carbon_chain_length,molecular_weight_gmol,purity_pct)
-VALUES ('2-Butene','CC=CC','internal_olefin',4,56.11,99.0);
-INSERT INTO substrate(substrate_name,smiles,substrate_class,carbon_chain_length,molecular_weight_gmol,purity_pct)
-VALUES ('Cyclohexene','C1=CCCCC1','cyclic_olefin',6,82.15,99.0);
-
--- ======================
--- INSERT 4: solvent
+-- INSERT 3: solvent
 -- ====================== 
 INSERT INTO solvent(solvent_name,abbreviation,boiling_point_c,dielectric_constant,polarity_class)
 VALUES ('Toluene','PhMe',110.6,2.38,'nonpolar');
@@ -63,6 +47,22 @@ INSERT INTO solvent(solvent_name,abbreviation,boiling_point_c,dielectric_constan
 VALUES ('Methanol','MeOH',64.7,32.7,'polar_protic');
 INSERT INTO solvent(solvent_name,abbreviation,boiling_point_c,dielectric_constant,polarity_class)
 VALUES ('DCM','DCM',39.6,9.1,'moderately_polar');
+
+-- ======================
+-- INSERT 4: substrate
+-- ======================
+INSERT INTO substrate(substrate_name,smiles,substrate_class,carbon_chain_length,molecular_weight_gmol,purity_pct)
+VALUES ('1-Propene','C=CC','terminal_olefin',3,42.08,99.0);
+INSERT INTO substrate(substrate_name,smiles,substrate_class,carbon_chain_length,molecular_weight_gmol,purity_pct)
+VALUES ('1-Butene','C=CCC','terminal_olefin',4,56.11,99.0);
+INSERT INTO substrate(substrate_name,smiles,substrate_class,carbon_chain_length,molecular_weight_gmol,purity_pct)
+VALUES ('1-Hexene','C=CCCCC','terminal_olefin',6,84.16,99.0);
+INSERT INTO substrate(substrate_name,smiles,substrate_class,carbon_chain_length,molecular_weight_gmol,purity_pct)
+VALUES ('1-Octene','C=CCCCCCC','terminal_olefin',8,112.21,99.0);
+INSERT INTO substrate(substrate_name,smiles,substrate_class,carbon_chain_length,molecular_weight_gmol,purity_pct)
+VALUES ('2-Butene','CC=CC','internal_olefin',4,56.11,99.0);
+INSERT INTO substrate(substrate_name,smiles,substrate_class,carbon_chain_length,molecular_weight_gmol,purity_pct)
+VALUES ('Cyclohexene','C1=CCCCC1','cyclic_olefin',6,82.15,99.0);
 
 -- ======================
 -- INSERT 5: product
@@ -82,8 +82,32 @@ VALUES ('Nonanal','linear_aldehyde',142.24);
 INSERT INTO product(product_name,product_type,molecular_weight_gmol)
 VALUES ('Hexanol','alcohol',102.17);
 
+-- =========================
+-- INSERT 6: literature_ref
+-- =========================
+INSERT INTO literature_ref(doi,title,authors,journal,year,ref_type) VALUES ('10.1021/ref0001xyz','Advances in isomerization catalysis: study 1','Franke R., van Leeuwen P.','J. Am. Chem. Soc.',2023,'journal');
+INSERT INTO literature_ref(doi,title,authors,journal,year,ref_type) VALUES ('10.1021/ref0002xyz','Advances in hydroformylation catalysis: study 2','Beller M., Bolm C.','Organometallics',2007,'journal');
+INSERT INTO literature_ref(doi,title,authors,journal,year,ref_type) VALUES ('10.1021/ref0003xyz','Advances in isomerization catalysis: study 3','Cornils B., Herrmann W.','Angew. Chem. Int. Ed.',2021,'journal');
+INSERT INTO literature_ref(doi,title,authors,journal,year,ref_type) VALUES ('10.1021/ref0004xyz','Advances in hydroformylation catalysis: study 4','Claver C., Castillon S.','Angew. Chem. Int. Ed.',2018,'journal');
+INSERT INTO literature_ref(doi,title,authors,journal,year,ref_type) VALUES ('10.1021/ref0005xyz','Advances in isomerization catalysis: study 5','Nozaki K., Takaya H.','J. Am. Chem. Soc.',2000,'journal');
+INSERT INTO literature_ref(doi,title,authors,journal,year,ref_type) VALUES ('10.1021/ref0006xyz','Advances in hydroformylation catalysis: study 6','Franke R., van Leeuwen P.','Organometallics',2007,'journal');
+INSERT INTO literature_ref(doi,title,authors,journal,year,ref_type) VALUES ('10.1021/ref0007xyz','Advances in isomerization catalysis: study 7','Claver C., Castillon S.','Catal. Sci. Technol.',2000,'journal');
+INSERT INTO literature_ref(doi,title,authors,journal,year,ref_type) VALUES ('10.1021/ref0008xyz','Advances in hydroformylation catalysis: study 8','Claver C., Castillon S.','Organometallics',2022,'journal');
+INSERT INTO literature_ref(doi,title,authors,journal,year,ref_type) VALUES ('10.1021/ref0009xyz','Advances in isomerization catalysis: study 9','Claver C., Castillon S.','ChemCatChem',2007,'journal');
+INSERT INTO literature_ref(doi,title,authors,journal,year,ref_type) VALUES ('10.1021/ref0010xyz','Advances in hydroformylation catalysis: study 10','Nozaki K., Takaya H.','Catal. Sci. Technol.',2008,'journal');
+INSERT INTO literature_ref(doi,title,authors,journal,year,ref_type) VALUES ('10.1021/ref0011xyz','Advances in isomerization catalysis: study 11','Franke R., van Leeuwen P.','ACS Catal.',2022,'journal');
+INSERT INTO literature_ref(doi,title,authors,journal,year,ref_type) VALUES ('10.1021/ref0012xyz','Advances in hydroformylation catalysis: study 12','Nozaki K., Takaya H.','Green Chem.',2008,'journal');
+INSERT INTO literature_ref(doi,title,authors,journal,year,ref_type) VALUES ('10.1021/ref0013xyz','Advances in isomerization catalysis: study 13','Cornils B., Herrmann W.','Organometallics',2024,'journal');
+INSERT INTO literature_ref(doi,title,authors,journal,year,ref_type) VALUES ('10.1021/ref0014xyz','Advances in hydroformylation catalysis: study 14','Beller M., Bolm C.','Angew. Chem. Int. Ed.',2002,'journal');
+INSERT INTO literature_ref(doi,title,authors,journal,year,ref_type) VALUES ('10.1021/ref0015xyz','Advances in isomerization catalysis: study 15','Nozaki K., Takaya H.','Angew. Chem. Int. Ed.',2011,'journal');
+INSERT INTO literature_ref(doi,title,authors,journal,year,ref_type) VALUES ('10.1021/ref0016xyz','Advances in hydroformylation catalysis: study 16','Beller M., Bolm C.','Catal. Sci. Technol.',2008,'journal');
+INSERT INTO literature_ref(doi,title,authors,journal,year,ref_type) VALUES ('10.1021/ref0017xyz','Advances in isomerization catalysis: study 17','Nozaki K., Takaya H.','Inorg. Chem.',2003,'thesis');
+INSERT INTO literature_ref(doi,title,authors,journal,year,ref_type) VALUES ('10.1021/ref0018xyz','Advances in hydroformylation catalysis: study 18','Franke R., van Leeuwen P.','Inorg. Chem.',2009,'book_chapter');
+INSERT INTO literature_ref(doi,title,authors,journal,year,ref_type) VALUES ('10.1021/ref0019xyz','Advances in isomerization catalysis: study 19','Claver C., Castillon S.','Green Chem.',2018,'patent');
+INSERT INTO literature_ref(doi,title,authors,journal,year,ref_type) VALUES ('10.1021/ref0020xyz','Advances in hydroformylation catalysis: study 20','Franke R., van Leeuwen P.','J. Am. Chem. Soc.',2021,'patent');
+
 -- ======================
--- INSERT 6: researcher
+-- INSERT 7: researcher
 -- ======================
 INSERT INTO researcher(first_name,last_name,email,affiliation,department,role)
 VALUES ('Robert','Franke','robert.franke@example.com','BASF','Homogeneous Catalysis','PI');
@@ -95,16 +119,6 @@ INSERT INTO researcher(first_name,last_name,email,affiliation,department,role)
 VALUES ('Jane','Smith','jane.smith@example.com','LSU','Chemistry','PhD_student');
 INSERT INTO researcher(first_name,last_name,email,affiliation,department,role)
 VALUES ('Michael','Brown','michael.brown@example.com','Dow','R&D','engineer');
-
--- ============================
--- INSERT 7: reaction_protocol
--- ============================
-INSERT INTO reaction_protocol(protocol_name,reaction_type,reactor_mode,reactor_type,atmosphere,co_h2_ratio,analysis_method)
-VALUES ('Standard Rh Hydroformylation','hydroformylation','batch','autoclave','CO/H2',1.0,'GC-MS');
-INSERT INTO reaction_protocol(protocol_name,reaction_type,reactor_mode,reactor_type,atmosphere,co_h2_ratio,analysis_method)
-VALUES ('Olefin Isomerization Pd','isomerization','batch','Schlenk','N2',NULL,'GC-MS');
-INSERT INTO reaction_protocol(protocol_name,reaction_type,reactor_mode,reactor_type,atmosphere,co_h2_ratio,analysis_method)
-VALUES ('Tandem Iso-HF','tandem_iso_hydroformylation','continuous_flow','PFR','CO/H2',1.0,'GC-MS');
 
 -- ======================
 -- INSERT 8: precatalyst
@@ -474,8 +488,90 @@ INSERT INTO precatalyst_ligand(precatalyst_id,ligand_id,stoichiometry) VALUES (1
 INSERT INTO precatalyst_ligand(precatalyst_id,ligand_id,stoichiometry) VALUES (119,3,1);
 INSERT INTO precatalyst_ligand(precatalyst_id,ligand_id,stoichiometry) VALUES (120,8,1);
 
+-- ============================
+-- INSERT 10: catalyst_support
+-- ============================
+INSERT INTO catalyst_support(support_name,support_type,surface_area_m2g,pore_volume_cm3g,avg_pore_size_nm,supplier) VALUES ('SiO2-300','polymer',887.4,1.5685,13.26,'TCI');
+INSERT INTO catalyst_support(support_name,support_type,surface_area_m2g,pore_volume_cm3g,avg_pore_size_nm,supplier) VALUES ('Al2O3-gamma','polymer',435.4,1.5346,4.11,'Strem');
+INSERT INTO catalyst_support(support_name,support_type,surface_area_m2g,pore_volume_cm3g,avg_pore_size_nm,supplier) VALUES ('PS-DVB resin','alumina',619.6,1.3229,10.89,'Sigma-Aldrich');
+INSERT INTO catalyst_support(support_name,support_type,surface_area_m2g,pore_volume_cm3g,avg_pore_size_nm,supplier) VALUES ('UiO-66 MOF','carbon',589.7,1.0546,5.18,'TCI');
+INSERT INTO catalyst_support(support_name,support_type,surface_area_m2g,pore_volume_cm3g,avg_pore_size_nm,supplier) VALUES ('Activated Carbon','MOF',279.5,1.6806,10.95,'Alfa Aesar');
+INSERT INTO catalyst_support(support_name,support_type,surface_area_m2g,pore_volume_cm3g,avg_pore_size_nm,supplier) VALUES ('MCM-41','none',325.6,1.4293,2.73,'Sigma-Aldrich');
+INSERT INTO catalyst_support(support_name,support_type,surface_area_m2g,pore_volume_cm3g,avg_pore_size_nm,supplier) VALUES ('SBA-15','polymer',391.0,0.3059,13.87,'ACROS');
+INSERT INTO catalyst_support(support_name,support_type,surface_area_m2g,pore_volume_cm3g,avg_pore_size_nm,supplier) VALUES ('MIL-101(Cr)','none',317.5,1.2487,7.14,'TCI');
+INSERT INTO catalyst_support(support_name,support_type,surface_area_m2g,pore_volume_cm3g,avg_pore_size_nm,supplier) VALUES ('Amberlyst-15','alumina',275.1,0.5946,9.3,'Strem');
+INSERT INTO catalyst_support(support_name,support_type,surface_area_m2g,pore_volume_cm3g,avg_pore_size_nm,supplier) VALUES ('Norit carbon','none',546.9,1.6365,7.19,'Alfa Aesar');
+
+-- ==============================
+-- INSERT 11: supported_catalyst
+-- ==============================
+INSERT INTO supported_catalyst(precatalyst_id,support_id,metal_loading_wt_pct,immobilization_method,leaching_test_ppm) VALUES (18,5,4.858,'wet_impregnation',2.153);
+INSERT INTO supported_catalyst(precatalyst_id,support_id,metal_loading_wt_pct,immobilization_method,leaching_test_ppm) VALUES (66,2,3.44,'covalent_grafting',1.347);
+INSERT INTO supported_catalyst(precatalyst_id,support_id,metal_loading_wt_pct,immobilization_method,leaching_test_ppm) VALUES (64,6,0.647,'encapsulation',1.093);
+INSERT INTO supported_catalyst(precatalyst_id,support_id,metal_loading_wt_pct,immobilization_method,leaching_test_ppm) VALUES (12,1,4.774,'covalent_grafting',2.191);
+INSERT INTO supported_catalyst(precatalyst_id,support_id,metal_loading_wt_pct,immobilization_method,leaching_test_ppm) VALUES (97,9,3.834,'wet_impregnation',1.274);
+INSERT INTO supported_catalyst(precatalyst_id,support_id,metal_loading_wt_pct,immobilization_method,leaching_test_ppm) VALUES (7,5,4.224,'ion_exchange',1.274);
+INSERT INTO supported_catalyst(precatalyst_id,support_id,metal_loading_wt_pct,immobilization_method,leaching_test_ppm) VALUES (111,3,1.932,'co-precipitation',0.412);
+INSERT INTO supported_catalyst(precatalyst_id,support_id,metal_loading_wt_pct,immobilization_method,leaching_test_ppm) VALUES (15,1,3.035,'wet_impregnation',1.227);
+INSERT INTO supported_catalyst(precatalyst_id,support_id,metal_loading_wt_pct,immobilization_method,leaching_test_ppm) VALUES (20,6,4.406,'covalent_grafting',2.081);
+INSERT INTO supported_catalyst(precatalyst_id,support_id,metal_loading_wt_pct,immobilization_method,leaching_test_ppm) VALUES (81,4,0.384,'wet_impregnation',2.196);
+INSERT INTO supported_catalyst(precatalyst_id,support_id,metal_loading_wt_pct,immobilization_method,leaching_test_ppm) VALUES (21,2,3.686,'co-precipitation',2.042);
+INSERT INTO supported_catalyst(precatalyst_id,support_id,metal_loading_wt_pct,immobilization_method,leaching_test_ppm) VALUES (102,3,0.729,'co-precipitation',1.193);
+INSERT INTO supported_catalyst(precatalyst_id,support_id,metal_loading_wt_pct,immobilization_method,leaching_test_ppm) VALUES (88,3,1.399,'encapsulation',2.182);
+INSERT INTO supported_catalyst(precatalyst_id,support_id,metal_loading_wt_pct,immobilization_method,leaching_test_ppm) VALUES (55,4,4.652,'ion_exchange',1.891);
+INSERT INTO supported_catalyst(precatalyst_id,support_id,metal_loading_wt_pct,immobilization_method,leaching_test_ppm) VALUES (77,5,2.055,'covalent_grafting',1.683);
+INSERT INTO supported_catalyst(precatalyst_id,support_id,metal_loading_wt_pct,immobilization_method,leaching_test_ppm) VALUES (9,8,4.508,'ion_exchange',1.134);
+INSERT INTO supported_catalyst(precatalyst_id,support_id,metal_loading_wt_pct,immobilization_method,leaching_test_ppm) VALUES (50,4,0.414,'co-precipitation',0.062);
+INSERT INTO supported_catalyst(precatalyst_id,support_id,metal_loading_wt_pct,immobilization_method,leaching_test_ppm) VALUES (49,4,2.983,'wet_impregnation',0.028);
+INSERT INTO supported_catalyst(precatalyst_id,support_id,metal_loading_wt_pct,immobilization_method,leaching_test_ppm) VALUES (60,4,0.43,'covalent_grafting',0.088);
+INSERT INTO supported_catalyst(precatalyst_id,support_id,metal_loading_wt_pct,immobilization_method,leaching_test_ppm) VALUES (68,2,2.619,'encapsulation',0.703);
+
+-- ==============================
+-- INSERT 12: catalyst_stability
+-- ==============================
+INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (28,277,74.83,'leaching',56.86,3,88.45);
+INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (104,209,103.3,'ligand_dissociation',64.31,5,70.76);
+INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (60,28,339.95,'aggregation',13.86,6,85.68);
+INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (103,56,131.84,'sintering',53.27,2,70.67);
+INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (36,237,132.41,'ligand_dissociation',44.88,8,54.8);
+INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (84,277,419.65,'ligand_dissociation',88.37,3,58.15);
+INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (63,247,114.74,'oxidation',86.22,2,68.57);
+INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (50,136,463.99,'unknown',45.95,6,84.13);
+INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (94,285,334.32,'oxidation',18.93,4,60.67);
+INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (8,297,370.51,'ligand_dissociation',72.32,0,52.46);
+INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (62,258,460.5,'leaching',19.17,8,53.93);
+INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (24,36,301.57,'aggregation',82.56,6,55.87);
+INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (114,292,130.65,'leaching',8.58,1,70.54);
+INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (75,290,266.16,'poisoning',23.38,5,61.7);
+INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (51,68,339.13,'poisoning',46.15,1,50.46);
+INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (80,289,498.09,'ligand_dissociation',53.39,8,62.99);
+INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (120,179,441.62,'sintering',38.26,2,71.47);
+INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (70,155,309.72,'unknown',63.86,0,82.73);
+INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (71,154,466.56,'ligand_dissociation',89.5,2,62.96);
+INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (114,55,373.78,'sintering',29.51,9,60.32);
+INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (44,105,346.87,'unknown',28.76,7,62.3);
+INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (117,27,55.23,'oxidation',79.64,0,50.17);
+INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (99,67,322.19,'poisoning',19.54,7,77.03);
+INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (55,288,14.74,'ligand_dissociation',90.05,2,76.73);
+INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (107,190,295.43,'sintering',43.68,0,65.1);
+INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (116,21,450.47,'sintering',66.39,10,55.04);
+INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (100,287,443.23,'oxidation',92.65,2,95.36);
+INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (31,84,488.34,'unknown',20.93,6,51.21);
+INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (95,171,393.37,'oxidation',77.2,3,63.07);
+INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (101,56,197.45,'ligand_dissociation',82.27,3,59.78);
+
+-- ============================
+-- INSERT 13: reaction_protocol
+-- ============================
+INSERT INTO reaction_protocol(protocol_name,reaction_type,reactor_mode,reactor_type,atmosphere,co_h2_ratio,analysis_method)
+VALUES ('Standard Rh Hydroformylation','hydroformylation','batch','autoclave','CO/H2',1.0,'GC-MS');
+INSERT INTO reaction_protocol(protocol_name,reaction_type,reactor_mode,reactor_type,atmosphere,co_h2_ratio,analysis_method)
+VALUES ('Olefin Isomerization Pd','isomerization','batch','Schlenk','N2',NULL,'GC-MS');
+INSERT INTO reaction_protocol(protocol_name,reaction_type,reactor_mode,reactor_type,atmosphere,co_h2_ratio,analysis_method)
+VALUES ('Tandem Iso-HF','tandem_iso_hydroformylation','continuous_flow','PFR','CO/H2',1.0,'GC-MS');
+
 -- ======================
--- INSERT 10: experiment
+-- INSERT 14: experiment
 -- ======================
 INSERT INTO experiment(experiment_code,title,reaction_type,protocol_id,lead_researcher,status)
 VALUES ('EXP-0001','Catalysis experiment 1','isomerization',2,1,'completed');
@@ -599,7 +695,7 @@ INSERT INTO experiment(experiment_code,title,reaction_type,protocol_id,lead_rese
 VALUES ('EXP-0060','Catalysis experiment 60','tandem_iso_hydroformylation',1,1,'completed');
 
 -- =================
--- INSERT 11: assay
+-- INSERT 15: assay
 -- =================
 INSERT INTO assay(experiment_id,precatalyst_id,substrate_id,solvent_id,protocol_id,assay_code,temp_c,pressure_bar,catalyst_loading_mol_pct,reaction_time_h)
 VALUES (37,28,4,6,2,'ASSAY-00001',106.01,7.54,0.627,7.73);
@@ -1202,8 +1298,52 @@ VALUES (1,47,3,2,2,'ASSAY-00299',111.65,23.17,0.397,7.15);
 INSERT INTO assay(experiment_id,precatalyst_id,substrate_id,solvent_id,protocol_id,assay_code,temp_c,pressure_bar,catalyst_loading_mol_pct,reaction_time_h)
 VALUES (49,61,1,1,3,'ASSAY-00300',64.05,11.23,0.088,1.54);
 
+-- ==========================
+-- INSERT 16: assay_additive
+-- ==========================
+INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (236,'AgBF4','cocatalyst',0.6531,21.0113);
+INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (180,'Bu4NBr','promoter',1.4096,28.1662);
+INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (157,'DMAP','cocatalyst',0.8699,47.0778);
+INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (117,'HCl','acid',1.2503,15.7465);
+INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (115,'AgBF4','cocatalyst',1.6758,15.8899);
+INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (13,'DMAP','cocatalyst',0.8883,29.4193);
+INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (99,'NaOAc','base',0.9567,22.6658);
+INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (205,'DMAP','cocatalyst',1.0468,39.893);
+INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (169,'HCl','acid',1.3348,14.9055);
+INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (143,'CuI','cocatalyst',0.7036,41.1027);
+INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (36,'DMAP','cocatalyst',1.362,12.0074);
+INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (261,'DMAP','cocatalyst',0.3373,3.2645);
+INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (275,'BHT','inhibitor',1.242,38.656);
+INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (170,'BHT','inhibitor',0.8582,31.8585);
+INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (15,'DMAP','cocatalyst',1.4508,19.8149);
+INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (60,'Bu4NBr','promoter',0.5258,33.1468);
+INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (134,'PPh3','ligand_excess',1.7907,43.1616);
+INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (92,'Et3N','base',1.5679,11.7232);
+INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (298,'AgBF4','cocatalyst',0.9559,28.3129);
+INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (136,'Et3N','base',0.9401,40.2694);
+INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (20,'AgBF4','cocatalyst',1.9764,30.1772);
+INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (56,'BHT','inhibitor',1.2447,36.2444);
+INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (223,'AgBF4','cocatalyst',0.8821,45.4359);
+INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (177,'BHT','inhibitor',1.7996,37.4391);
+INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (161,'BHT','inhibitor',0.9276,37.8371);
+INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (224,'p-TsOH','acid',1.5433,26.5437);
+INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (262,'DMAP','cocatalyst',0.5855,4.7967);
+INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (198,'p-TsOH','acid',0.5073,17.4565);
+INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (296,'AgBF4','cocatalyst',0.2071,8.3907);
+INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (98,'Bu4NBr','promoter',1.4032,35.6145);
+INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (131,'Et3N','base',0.859,17.2132);
+INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (23,'BHT','inhibitor',0.8608,11.1349);
+INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (1,'Bu4NBr','promoter',0.8095,38.72);
+INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (267,'PPh3','ligand_excess',1.7206,38.5141);
+INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (276,'Bu4NBr','promoter',0.9801,47.1943);
+INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (101,'p-TsOH','acid',1.5193,42.8189);
+INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (187,'Bu4NBr','promoter',1.0995,36.9971);
+INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (221,'CuI','cocatalyst',1.8007,24.9232);
+INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (64,'p-TsOH','acid',0.8999,2.4222);
+INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (154,'NaOAc','base',1.3543,40.109);
+
 -- ===============================
--- INSERT 12: performance_metrics
+-- INSERT 17: performance_metrics
 -- ===============================
 INSERT INTO performance_metrics(assay_id,conversion_pct,yield_linear_aldehyde_pct,yield_branched_aldehyde_pct,lb_ratio,tof_h_inv,ton)
 VALUES (1,87.36,50.53,18.86,2.67,626.21,2194.07);
@@ -1806,8 +1946,190 @@ VALUES (299,74.49,65.54,28.98,2.25,697.64,3895.84);
 INSERT INTO performance_metrics(assay_id,conversion_pct,yield_linear_aldehyde_pct,yield_branched_aldehyde_pct,lb_ratio,tof_h_inv,ton)
 VALUES (300,85.45,86.9,13.77,6.27,579.83,3016.77);
 
+-- =================================
+-- INSERT 18: isomerization_metrics
+-- =================================
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (85,46.04,39.986,1.915797,'{"1-oct": 74.0, "2-oct": 26.4, "3-oct": 6.6}',409.709,1056.63);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (240,92.059,54.491,4.160666,'{"1-oct": 69.4, "2-oct": 29.3, "3-oct": 9.1}',568.7738,1334.69);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (66,80.615,47.672,2.469138,'{"1-oct": 50.7, "2-oct": 27.0, "3-oct": 17.5}',354.1038,2206.53);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (274,26.5,71.714,1.294931,'{"1-oct": 55.2, "2-oct": 10.6, "3-oct": 17.8}',377.1197,1850.48);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (14,33.638,24.848,4.009379,'{"1-oct": 68.0, "2-oct": 15.5, "3-oct": 5.2}',278.8677,2646.94);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (202,91.105,15.993,3.628366,'{"1-oct": 67.6, "2-oct": 22.9, "3-oct": 12.4}',395.9765,2286.59);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (289,79.47,16.514,1.185822,'{"1-oct": 63.3, "2-oct": 19.5, "3-oct": 13.0}',556.5119,953.31);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (43,51.913,62.215,1.720877,'{"1-oct": 50.1, "2-oct": 12.4, "3-oct": 7.9}',565.2554,849.2);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (220,28.967,47.51,3.834729,'{"1-oct": 59.4, "2-oct": 24.5, "3-oct": 19.6}',156.2684,688.33);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (70,59.348,29.81,0.592578,'{"1-oct": 47.2, "2-oct": 10.3, "3-oct": 13.0}',163.3529,721.08);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (237,40.573,78.201,2.811459,'{"1-oct": 74.7, "2-oct": 19.8, "3-oct": 18.1}',560.9597,422.52);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (94,63.055,42.858,2.258297,'{"1-oct": 77.6, "2-oct": 19.6, "3-oct": 17.3}',155.6473,201.56);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (26,50.053,15.186,3.184284,'{"1-oct": 62.5, "2-oct": 16.1, "3-oct": 19.9}',52.3512,490.13);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (134,28.884,63.511,3.070956,'{"1-oct": 60.9, "2-oct": 19.0, "3-oct": 11.6}',634.6853,715.78);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (195,84.512,79.302,1.596363,'{"1-oct": 69.6, "2-oct": 29.0, "3-oct": 8.1}',500.6116,1848.41);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (168,35.827,56.23,0.86958,'{"1-oct": 40.1, "2-oct": 19.0, "3-oct": 13.9}',147.3127,271.44);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (109,41.844,26.203,3.564084,'{"1-oct": 67.5, "2-oct": 28.5, "3-oct": 16.8}',565.3602,1389.39);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (233,66.879,56.283,4.674975,'{"1-oct": 65.9, "2-oct": 28.2, "3-oct": 17.4}',345.8598,1656.46);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (173,25.356,21.615,1.607298,'{"1-oct": 51.5, "2-oct": 12.5, "3-oct": 15.3}',601.6766,1729.16);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (143,72.48,75.987,2.552314,'{"1-oct": 41.6, "2-oct": 18.6, "3-oct": 9.8}',400.0982,287.3);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (216,38.778,16.393,4.813364,'{"1-oct": 78.0, "2-oct": 30.0, "3-oct": 15.1}',670.4073,1746.84);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (130,40.213,12.816,3.805717,'{"1-oct": 76.6, "2-oct": 13.6, "3-oct": 13.8}',381.6957,1971.95);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (42,67.609,44.421,0.547088,'{"1-oct": 66.8, "2-oct": 27.2, "3-oct": 9.9}',284.8892,1033.26);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (241,72.026,30.175,4.731448,'{"1-oct": 58.2, "2-oct": 16.3, "3-oct": 9.8}',652.7172,1672.78);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (10,92.764,38.292,2.621522,'{"1-oct": 61.7, "2-oct": 18.3, "3-oct": 7.8}',790.6142,1990.1);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (277,47.133,62.951,3.164503,'{"1-oct": 62.0, "2-oct": 28.6, "3-oct": 11.6}',610.3925,650.5);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (27,72.369,18.5,4.868419,'{"1-oct": 46.3, "2-oct": 21.0, "3-oct": 13.3}',491.0086,755.93);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (180,26.991,79.458,4.573356,'{"1-oct": 73.3, "2-oct": 20.0, "3-oct": 15.7}',374.5438,396.53);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (115,58.165,29.14,4.190147,'{"1-oct": 62.1, "2-oct": 17.7, "3-oct": 18.8}',784.3933,769.01);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (36,58.118,71.553,4.333732,'{"1-oct": 56.6, "2-oct": 28.7, "3-oct": 12.6}',228.2354,2380.52);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (21,81.541,29.799,1.562924,'{"1-oct": 59.6, "2-oct": 13.0, "3-oct": 13.1}',473.6808,2996.76);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (16,45.884,48.634,2.762807,'{"1-oct": 47.5, "2-oct": 23.9, "3-oct": 13.6}',369.7222,999.24);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (127,37.517,64.288,0.313872,'{"1-oct": 72.5, "2-oct": 17.7, "3-oct": 15.0}',598.3171,2130.42);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (103,81.556,78.657,2.52711,'{"1-oct": 63.6, "2-oct": 27.4, "3-oct": 18.1}',39.2455,1531.76);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (11,53.023,46.817,2.338948,'{"1-oct": 66.2, "2-oct": 13.1, "3-oct": 12.0}',580.7306,1259.44);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (79,92.69,33.699,3.494253,'{"1-oct": 74.1, "2-oct": 27.2, "3-oct": 10.7}',523.371,2562.71);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (123,43.75,60.31,3.821069,'{"1-oct": 42.7, "2-oct": 22.6, "3-oct": 18.8}',699.1826,155.9);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (65,94.807,62.274,2.22646,'{"1-oct": 74.9, "2-oct": 18.9, "3-oct": 15.4}',87.7701,1919.56);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (243,87.757,13.219,4.001103,'{"1-oct": 45.8, "2-oct": 20.6, "3-oct": 13.5}',241.7605,1155.78);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (59,79.439,21.899,0.486945,'{"1-oct": 49.6, "2-oct": 28.3, "3-oct": 7.1}',697.9633,1878.15);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (112,54.586,27.778,1.351101,'{"1-oct": 76.0, "2-oct": 23.6, "3-oct": 7.4}',17.424,2423.67);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (239,53.13,34.19,2.979101,'{"1-oct": 50.0, "2-oct": 26.9, "3-oct": 8.0}',514.7616,1301.71);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (132,48.852,43.825,1.262308,'{"1-oct": 79.7, "2-oct": 15.9, "3-oct": 19.7}',461.8189,1745.7);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (189,69.367,29.214,2.873052,'{"1-oct": 42.0, "2-oct": 22.1, "3-oct": 12.5}',551.7816,2246.77);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (86,87.812,30.034,4.014415,'{"1-oct": 65.5, "2-oct": 22.4, "3-oct": 15.2}',489.5813,1089.35);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (84,74.07,56.143,4.207852,'{"1-oct": 65.9, "2-oct": 16.2, "3-oct": 11.6}',506.316,2715.04);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (160,63.468,61.265,0.541654,'{"1-oct": 47.0, "2-oct": 12.6, "3-oct": 13.1}',243.1373,2255.07);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (56,92.862,47.16,4.576086,'{"1-oct": 73.0, "2-oct": 19.6, "3-oct": 17.1}',666.0734,808.06);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (297,75.992,33.71,0.664332,'{"1-oct": 78.7, "2-oct": 27.2, "3-oct": 15.9}',770.6857,465.23);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (295,93.496,77.709,4.042479,'{"1-oct": 40.6, "2-oct": 20.7, "3-oct": 11.8}',298.9623,2382.51);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (193,70.462,57.064,2.964344,'{"1-oct": 44.3, "2-oct": 14.7, "3-oct": 5.4}',659.7097,2823.86);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (204,86.318,49.299,4.584754,'{"1-oct": 73.0, "2-oct": 28.2, "3-oct": 9.5}',184.8801,236.49);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (102,50.622,19.784,4.736682,'{"1-oct": 43.9, "2-oct": 27.7, "3-oct": 7.0}',250.448,1503.24);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (39,54.023,56.934,3.741387,'{"1-oct": 69.7, "2-oct": 13.1, "3-oct": 11.2}',757.3195,1286.42);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (125,27.427,44.254,2.099768,'{"1-oct": 54.8, "2-oct": 18.9, "3-oct": 19.3}',761.702,146.51);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (53,84.159,16.955,3.459833,'{"1-oct": 54.3, "2-oct": 18.0, "3-oct": 7.8}',440.128,2934.64);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (155,29.162,69.362,2.328115,'{"1-oct": 63.9, "2-oct": 10.4, "3-oct": 16.8}',533.5873,1943.03);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (62,38.268,18.815,2.866432,'{"1-oct": 48.3, "2-oct": 14.3, "3-oct": 18.0}',64.202,2307.21);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (290,44.642,20.329,4.512602,'{"1-oct": 45.8, "2-oct": 12.6, "3-oct": 8.8}',12.2401,2582.3);
+INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (22,33.087,56.274,0.226323,'{"1-oct": 49.5, "2-oct": 16.5, "3-oct": 7.6}',21.7397,2380.45);
+
 -- ==========================
--- INSERT 13: kinetics_study
+-- INSERT 19: tandem_metrics
+-- ==========================
+INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (18,42.763,84.624,8.193,283.1549,746.2408,'isomerization');
+INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (45,75.517,23.009,9.993,529.0696,684.0355,'isomerization');
+INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (244,50.105,77.166,6.5,499.9032,508.5397,'none');
+INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (144,26.656,44.873,10.144,237.0946,225.5348,'hydroformylation');
+INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (175,24.699,73.224,1.852,76.0074,899.6154,'isomerization');
+INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (40,58.946,56.053,8.643,211.1947,190.566,'hydroformylation');
+INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (245,81.153,80.879,6.633,551.1893,109.163,'hydroformylation');
+INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (23,62.029,39.615,8.88,143.3885,805.2467,'isomerization');
+INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (159,79.309,39.508,8.566,86.6335,370.3534,'isomerization');
+INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (151,76.505,74.161,14.631,494.6876,755.6093,'none');
+INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (254,58.972,57.63,10.039,422.2133,83.2962,'hydroformylation');
+INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (122,69.189,36.629,5.427,23.5414,1050.3421,'none');
+INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (171,66.014,19.871,11.244,583.65,155.5213,'none');
+INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (196,35.059,44.388,5.443,234.6308,879.8354,'none');
+INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (37,61.736,76.834,2.756,457.5728,107.2269,'isomerization');
+INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (152,39.047,61.336,7.542,276.3856,364.1419,'none');
+INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (167,27.967,45.094,4.607,413.522,609.6277,'none');
+INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (76,41.589,30.436,14.774,51.7735,285.0866,'isomerization');
+INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (203,73.714,68.491,4.697,89.5909,621.9931,'hydroformylation');
+INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (15,32.299,41.615,10.703,310.1522,1008.3573,'hydroformylation');
+INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (236,25.045,75.324,1.113,30.8701,1109.3368,'hydroformylation');
+INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (255,60.303,55.138,10.788,262.2625,182.4494,'isomerization');
+INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (215,87.634,27.031,14.24,286.8562,843.0515,'hydroformylation');
+INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (174,26.169,74.114,4.028,361.5453,652.5569,'hydroformylation');
+INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (104,80.937,67.206,3.713,471.8884,137.8363,'none');
+INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (154,27.982,50.697,13.636,222.6377,886.486,'none');
+INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (211,77.053,31.539,2.623,134.4176,742.7588,'none');
+INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (8,25.275,81.59,9.605,289.0928,698.2958,'none');
+INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (20,51.423,79.691,8.685,388.473,768.2,'none');
+INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (161,42.13,45.783,7.299,386.2034,965.7791,'none');
+INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (138,23.932,50.514,5.001,282.11,115.4236,'hydroformylation');
+INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (146,25.371,75.498,12.902,376.7049,633.128,'hydroformylation');
+INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (224,60.623,81.796,11.214,43.7932,1095.4075,'none');
+INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (282,65.629,37.507,7.397,107.4994,121.1548,'isomerization');
+INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (164,76.768,73.616,14.745,68.9109,793.0462,'isomerization');
+INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (231,37.342,45.643,6.872,323.1939,232.5581,'hydroformylation');
+INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (150,84.256,42.119,11.73,413.7607,110.2203,'none');
+INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (25,65.311,19.614,1.87,413.46,376.769,'none');
+INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (29,79.61,82.509,9.239,107.2165,143.7273,'none');
+INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (110,29.9,39.487,14.532,425.1184,500.7517,'none');
+INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (200,69.618,20.93,8.604,393.2261,427.748,'isomerization');
+INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (50,66.908,73.027,11.212,417.5404,655.3523,'none');
+INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (291,66.932,50.594,0.764,199.1423,1143.8447,'hydroformylation');
+INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (299,86.337,49.039,3.785,99.7879,138.7398,'isomerization');
+INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (95,55.538,52.784,11.21,325.3883,811.2186,'none');
+INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (206,29.173,41.37,2.853,502.1801,936.7625,'isomerization');
+INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (209,70.483,18.058,5.782,437.3597,1165.0269,'none');
+INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (192,39.945,67.398,7.009,329.7265,405.8881,'hydroformylation');
+INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (182,83.278,28.581,10.335,350.8432,556.687,'hydroformylation');
+INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (259,74.469,50.203,6.571,113.9937,279.6524,'none');
+
+-- ===============================
+-- INSERT 20: selectivity_profile
+-- ===============================
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (71,7,72.128,12.873,17.621429,'HPLC');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (129,1,77.47,16.583,38.959338,'NMR');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (247,7,93.197,43.589,9.122077,'GC-MS');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (191,5,6.931,70.081,22.889402,'HPLC');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (53,6,19.95,71.409,44.290661,'HPLC');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (265,7,88.737,46.869,49.456244,'NMR');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (64,3,24.811,68.043,9.563261,'HPLC');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (43,7,82.041,5.255,32.790011,'HPLC');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (83,3,12.701,33.754,44.475431,'NMR');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (231,5,85.096,35.411,48.686442,'NMR');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (76,7,66.054,33.694,39.866571,'HPLC');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (224,1,76.308,65.71,3.955561,'GC-MS');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (114,7,52.275,29.588,4.012645,'HPLC');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (231,3,29.811,54.633,21.311542,'NMR');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (14,4,34.045,4.77,43.503158,'HPLC');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (28,4,58.796,39.71,31.977071,'GC-FID');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (258,3,8.054,57.739,18.171923,'GC-MS');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (121,4,90.562,13.707,30.382569,'NMR');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (42,3,4.271,6.984,38.927984,'HPLC');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (115,1,35.042,85.503,1.628942,'GC-MS');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (164,1,64.832,85.445,18.606949,'GC-FID');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (172,7,54.949,48.122,19.907722,'HPLC');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (75,2,24.463,11.097,36.786386,'NMR');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (20,3,49.668,82.305,5.896872,'HPLC');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (242,6,67.18,20.097,30.59774,'NMR');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (72,7,19.817,13.08,3.711861,'GC-MS');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (241,4,85.476,40.615,4.398659,'HPLC');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (3,1,63.777,64.149,27.504357,'HPLC');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (10,3,84.785,76.771,35.593337,'GC-MS');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (111,7,75.607,46.279,6.076909,'GC-MS');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (77,5,75.454,22.07,24.706157,'HPLC');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (271,4,53.078,33.833,40.18505,'GC-MS');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (57,7,58.523,8.673,15.471443,'NMR');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (148,2,50.415,69.456,41.168737,'GC-FID');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (155,1,12.781,29.215,3.717509,'NMR');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (25,2,64.93,31.662,43.899228,'GC-MS');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (215,6,73.171,12.484,25.148161,'GC-FID');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (235,1,79.151,47.111,15.213186,'GC-MS');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (256,5,31.33,64.131,17.307694,'HPLC');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (275,1,80.518,23.304,31.756504,'HPLC');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (264,5,12.766,27.951,26.678567,'GC-MS');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (124,6,56.63,52.678,8.568319,'HPLC');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (74,3,80.198,51.162,41.263561,'GC-FID');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (220,1,8.635,85.421,38.553408,'HPLC');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (181,2,62.206,69.259,20.835173,'GC-FID');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (293,4,47.816,56.818,14.490686,'HPLC');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (96,6,46.397,72.617,34.252692,'HPLC');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (44,5,43.633,62.287,7.912442,'NMR');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (185,1,46.52,19.158,30.336947,'HPLC');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (270,5,81.98,29.419,49.401288,'HPLC');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (260,7,92.685,12.638,18.533305,'GC-FID');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (260,5,30.997,42.516,13.380909,'GC-MS');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (11,4,14.242,5.504,47.269791,'NMR');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (241,1,24.337,78.012,7.993386,'HPLC');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (199,3,88.773,65.18,9.499807,'GC-MS');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (130,6,47.837,46.811,24.942998,'HPLC');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (9,3,47.753,9.014,19.668177,'NMR');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (35,3,91.869,20.148,17.651225,'GC-FID');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (54,7,27.447,54.179,42.144054,'NMR');
+INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (298,6,27.86,1.728,5.383779,'GC-MS');
+
+-- ==========================
+-- INSERT 21: kinetics_study
 -- ==========================
 INSERT INTO kinetics_study(experiment_id,precatalyst_id,substrate_id,study_type,rate_constant_k,rate_constant_units,activation_energy_kJ_mol)
 VALUES (2,62,1,'initial_rate',1.913984,'mol L^-1 h^-1',60.63);
@@ -1970,535 +2292,8 @@ VALUES (14,61,4,'initial_rate',1.561235,'mol L^-1 h^-1',94.52);
 INSERT INTO kinetics_study(experiment_id,precatalyst_id,substrate_id,study_type,rate_constant_k,rate_constant_units,activation_energy_kJ_mol)
 VALUES (21,21,6,'initial_rate',3.723878,'mol L^-1 h^-1',98.26);
 
--- ===========================
--- INSERT 14: dft_calculation
--- ===========================
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (71,'Gaussian','B3LYP','def2-TZVP','optimization',-1479.073747,-1481.540619596649);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (82,'Gaussian','B3LYP','def2-TZVP','optimization',-1701.186916,-1702.5826494393623);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (7,'Gaussian','B3LYP','def2-TZVP','optimization',-1136.342334,-1139.164451509449);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (15,'Gaussian','B3LYP','def2-TZVP','optimization',-1764.034162,-1764.692545494279);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (2,'Gaussian','B3LYP','def2-TZVP','optimization',-1832.639644,-1834.8786435616157);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (16,'Gaussian','B3LYP','def2-TZVP','optimization',-1604.1917,-1606.7608066675687);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (6,'Gaussian','B3LYP','def2-TZVP','optimization',-1418.922977,-1417.015462854382);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (89,'Gaussian','B3LYP','def2-TZVP','optimization',-1403.787716,-1405.0737293669677);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (12,'Gaussian','B3LYP','def2-TZVP','optimization',-1751.277744,-1751.27855193415);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (88,'Gaussian','B3LYP','def2-TZVP','optimization',-1381.355142,-1377.0466541548137);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (98,'Gaussian','B3LYP','def2-TZVP','optimization',-1374.86767,-1379.2699186839059);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (83,'Gaussian','B3LYP','def2-TZVP','optimization',-1846.081565,-1845.7180317421976);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (14,'Gaussian','B3LYP','def2-TZVP','optimization',-1874.172542,-1876.8457956914394);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (72,'Gaussian','B3LYP','def2-TZVP','optimization',-1211.438174,-1208.871198767986);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (104,'Gaussian','B3LYP','def2-TZVP','optimization',-1108.204049,-1105.8721606824622);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (3,'Gaussian','B3LYP','def2-TZVP','optimization',-1310.75002,-1312.1683450274957);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (18,'Gaussian','B3LYP','def2-TZVP','optimization',-1749.303759,-1753.908873572845);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (91,'Gaussian','B3LYP','def2-TZVP','optimization',-1562.499996,-1564.552850035591);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (90,'Gaussian','B3LYP','def2-TZVP','optimization',-1509.908004,-1509.2409866603361);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (70,'Gaussian','B3LYP','def2-TZVP','optimization',-1652.335321,-1650.0112968987728);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (36,'Gaussian','B3LYP','def2-TZVP','optimization',-1132.33816,-1131.3513605576436);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (111,'Gaussian','B3LYP','def2-TZVP','optimization',-1445.47969,-1449.7909241663883);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (20,'Gaussian','B3LYP','def2-TZVP','optimization',-1550.6158,-1547.4216144850025);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (70,'Gaussian','B3LYP','def2-TZVP','optimization',-1632.887293,-1637.8800947127575);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (82,'Gaussian','B3LYP','def2-TZVP','optimization',-1494.042267,-1491.7056895856115);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (114,'Gaussian','B3LYP','def2-TZVP','optimization',-1981.280143,-1977.7118501166578);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (100,'Gaussian','B3LYP','def2-TZVP','optimization',-1379.802687,-1381.5957460569227);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (9,'Gaussian','B3LYP','def2-TZVP','optimization',-1341.710583,-1341.321017784066);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (50,'Gaussian','B3LYP','def2-TZVP','optimization',-1810.130548,-1808.2983061744233);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (99,'Gaussian','B3LYP','def2-TZVP','optimization',-1448.532193,-1447.4018005764947);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (42,'Gaussian','B3LYP','def2-TZVP','optimization',-1590.195472,-1591.9752314435168);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (13,'Gaussian','B3LYP','def2-TZVP','optimization',-1476.799461,-1481.1326625690374);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (107,'Gaussian','B3LYP','def2-TZVP','optimization',-1062.200463,-1065.4140749996388);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (5,'Gaussian','B3LYP','def2-TZVP','optimization',-1797.920971,-1798.067268127633);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (13,'Gaussian','B3LYP','def2-TZVP','optimization',-1968.18285,-1966.7653333187236);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (50,'Gaussian','B3LYP','def2-TZVP','optimization',-1342.078742,-1341.8205283738557);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (90,'Gaussian','B3LYP','def2-TZVP','optimization',-1409.699088,-1414.2082317275444);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (29,'Gaussian','B3LYP','def2-TZVP','optimization',-1394.046376,-1398.3376363904988);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (120,'Gaussian','B3LYP','def2-TZVP','optimization',-1078.964791,-1077.4072973810196);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (119,'Gaussian','B3LYP','def2-TZVP','optimization',-1110.232675,-1114.4331069676712);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (103,'Gaussian','B3LYP','def2-TZVP','optimization',-1361.083284,-1362.4740234887493);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (96,'Gaussian','B3LYP','def2-TZVP','optimization',-1061.756142,-1062.5966099729023);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (48,'Gaussian','B3LYP','def2-TZVP','optimization',-1205.750423,-1210.1674227555284);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (79,'Gaussian','B3LYP','def2-TZVP','optimization',-1734.184366,-1738.7778344772564);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (10,'Gaussian','B3LYP','def2-TZVP','optimization',-1165.543502,-1169.764148251395);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (28,'Gaussian','B3LYP','def2-TZVP','optimization',-1039.413255,-1043.4420624984234);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (93,'Gaussian','B3LYP','def2-TZVP','optimization',-1768.981997,-1770.1286861177402);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (25,'Gaussian','B3LYP','def2-TZVP','optimization',-1473.807978,-1476.3203477094598);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (81,'Gaussian','B3LYP','def2-TZVP','optimization',-1052.496655,-1051.9124201998702);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (72,'Gaussian','B3LYP','def2-TZVP','optimization',-1584.8154,-1588.7602581810083);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (82,'Gaussian','B3LYP','def2-TZVP','optimization',-1423.436341,-1421.691415362552);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (90,'Gaussian','B3LYP','def2-TZVP','optimization',-1334.757645,-1330.9294048062677);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (22,'Gaussian','B3LYP','def2-TZVP','optimization',-1207.538402,-1207.0387473342946);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (65,'Gaussian','B3LYP','def2-TZVP','optimization',-1662.487129,-1665.9053644410067);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (77,'Gaussian','B3LYP','def2-TZVP','optimization',-1556.98783,-1558.4645892472968);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (41,'Gaussian','B3LYP','def2-TZVP','optimization',-1449.918658,-1444.95015485825);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (109,'Gaussian','B3LYP','def2-TZVP','optimization',-1628.280488,-1625.6386443209565);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (56,'Gaussian','B3LYP','def2-TZVP','optimization',-1173.845025,-1175.6105157995155);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (31,'Gaussian','B3LYP','def2-TZVP','optimization',-1436.855297,-1439.7160156395628);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (99,'Gaussian','B3LYP','def2-TZVP','optimization',-1449.761294,-1447.315510514968);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (47,'Gaussian','B3LYP','def2-TZVP','optimization',-1038.348224,-1038.8732261100176);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (51,'Gaussian','B3LYP','def2-TZVP','optimization',-1999.804372,-2004.457742977718);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (37,'Gaussian','B3LYP','def2-TZVP','optimization',-1404.237173,-1404.0610794115967);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (114,'Gaussian','B3LYP','def2-TZVP','optimization',-1698.158346,-1700.1550063827183);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (29,'Gaussian','B3LYP','def2-TZVP','optimization',-1785.177187,-1787.0281402495066);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (99,'Gaussian','B3LYP','def2-TZVP','optimization',-1178.060078,-1176.1628861609056);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (36,'Gaussian','B3LYP','def2-TZVP','optimization',-1080.887917,-1080.7752021165888);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (74,'Gaussian','B3LYP','def2-TZVP','optimization',-1074.07755,-1077.5304021378124);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (5,'Gaussian','B3LYP','def2-TZVP','optimization',-1539.630194,-1543.0691229365405);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (34,'Gaussian','B3LYP','def2-TZVP','optimization',-1632.917107,-1632.0955499364013);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (30,'Gaussian','B3LYP','def2-TZVP','optimization',-1743.756162,-1745.753137683279);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (74,'Gaussian','B3LYP','def2-TZVP','optimization',-1600.201752,-1596.0229339665552);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (94,'Gaussian','B3LYP','def2-TZVP','optimization',-1922.798434,-1924.5515134595998);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (62,'Gaussian','B3LYP','def2-TZVP','optimization',-1827.097509,-1823.8404565561511);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (89,'Gaussian','B3LYP','def2-TZVP','optimization',-1297.152105,-1293.9569523516361);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (13,'Gaussian','B3LYP','def2-TZVP','optimization',-1404.768797,-1406.7648644615672);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (94,'Gaussian','B3LYP','def2-TZVP','optimization',-1191.658828,-1192.8433668950054);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (100,'Gaussian','B3LYP','def2-TZVP','optimization',-1944.077291,-1941.3682759632986);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (45,'Gaussian','B3LYP','def2-TZVP','optimization',-1120.207497,-1120.8644530306876);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (120,'Gaussian','B3LYP','def2-TZVP','optimization',-1132.168903,-1128.471037858788);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (30,'Gaussian','B3LYP','def2-TZVP','optimization',-1252.321343,-1248.826561326874);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (119,'Gaussian','B3LYP','def2-TZVP','optimization',-1988.565619,-1985.7914328185595);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (49,'Gaussian','B3LYP','def2-TZVP','optimization',-1945.872051,-1945.6282174848639);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (41,'Gaussian','B3LYP','def2-TZVP','optimization',-1460.070271,-1463.574470808327);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (65,'Gaussian','B3LYP','def2-TZVP','optimization',-1302.231347,-1305.6993721739532);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (87,'Gaussian','B3LYP','def2-TZVP','optimization',-1268.421426,-1269.4925989548099);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (58,'Gaussian','B3LYP','def2-TZVP','optimization',-1247.159797,-1246.4072484614992);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (12,'Gaussian','B3LYP','def2-TZVP','optimization',-1777.914372,-1780.0165417084331);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (51,'Gaussian','B3LYP','def2-TZVP','optimization',-1851.987599,-1853.6259172195914);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (61,'Gaussian','B3LYP','def2-TZVP','optimization',-1428.559409,-1433.066298019299);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (52,'Gaussian','B3LYP','def2-TZVP','optimization',-1737.442023,-1738.456752626341);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (56,'Gaussian','B3LYP','def2-TZVP','optimization',-1226.174863,-1229.8711112510482);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (18,'Gaussian','B3LYP','def2-TZVP','optimization',-1519.077498,-1522.0964127228108);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (51,'Gaussian','B3LYP','def2-TZVP','optimization',-1347.751561,-1350.790567996068);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (79,'Gaussian','B3LYP','def2-TZVP','optimization',-1002.921233,-1002.6787551772309);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (32,'Gaussian','B3LYP','def2-TZVP','optimization',-1928.35602,-1925.588301012083);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (42,'Gaussian','B3LYP','def2-TZVP','optimization',-1315.262028,-1314.5018456275498);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (15,'Gaussian','B3LYP','def2-TZVP','optimization',-1328.252447,-1329.0170409763437);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (45,'Gaussian','B3LYP','def2-TZVP','optimization',-1809.510258,-1811.065008904897);
-INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
-VALUES (84,'Gaussian','B3LYP','def2-TZVP','optimization',-1975.79317,-1977.744981524536);
-
-
--- ================================================================
--- literature_ref
--- ================================================================
-INSERT INTO literature_ref(doi,title,authors,journal,year,ref_type) VALUES ('10.1021/ref0001xyz','Advances in isomerization catalysis: study 1','Franke R., van Leeuwen P.','J. Am. Chem. Soc.',2023,'journal');
-INSERT INTO literature_ref(doi,title,authors,journal,year,ref_type) VALUES ('10.1021/ref0002xyz','Advances in hydroformylation catalysis: study 2','Beller M., Bolm C.','Organometallics',2007,'journal');
-INSERT INTO literature_ref(doi,title,authors,journal,year,ref_type) VALUES ('10.1021/ref0003xyz','Advances in isomerization catalysis: study 3','Cornils B., Herrmann W.','Angew. Chem. Int. Ed.',2021,'journal');
-INSERT INTO literature_ref(doi,title,authors,journal,year,ref_type) VALUES ('10.1021/ref0004xyz','Advances in hydroformylation catalysis: study 4','Claver C., Castillon S.','Angew. Chem. Int. Ed.',2018,'journal');
-INSERT INTO literature_ref(doi,title,authors,journal,year,ref_type) VALUES ('10.1021/ref0005xyz','Advances in isomerization catalysis: study 5','Nozaki K., Takaya H.','J. Am. Chem. Soc.',2000,'journal');
-INSERT INTO literature_ref(doi,title,authors,journal,year,ref_type) VALUES ('10.1021/ref0006xyz','Advances in hydroformylation catalysis: study 6','Franke R., van Leeuwen P.','Organometallics',2007,'journal');
-INSERT INTO literature_ref(doi,title,authors,journal,year,ref_type) VALUES ('10.1021/ref0007xyz','Advances in isomerization catalysis: study 7','Claver C., Castillon S.','Catal. Sci. Technol.',2000,'journal');
-INSERT INTO literature_ref(doi,title,authors,journal,year,ref_type) VALUES ('10.1021/ref0008xyz','Advances in hydroformylation catalysis: study 8','Claver C., Castillon S.','Organometallics',2022,'journal');
-INSERT INTO literature_ref(doi,title,authors,journal,year,ref_type) VALUES ('10.1021/ref0009xyz','Advances in isomerization catalysis: study 9','Claver C., Castillon S.','ChemCatChem',2007,'journal');
-INSERT INTO literature_ref(doi,title,authors,journal,year,ref_type) VALUES ('10.1021/ref0010xyz','Advances in hydroformylation catalysis: study 10','Nozaki K., Takaya H.','Catal. Sci. Technol.',2008,'journal');
-INSERT INTO literature_ref(doi,title,authors,journal,year,ref_type) VALUES ('10.1021/ref0011xyz','Advances in isomerization catalysis: study 11','Franke R., van Leeuwen P.','ACS Catal.',2022,'journal');
-INSERT INTO literature_ref(doi,title,authors,journal,year,ref_type) VALUES ('10.1021/ref0012xyz','Advances in hydroformylation catalysis: study 12','Nozaki K., Takaya H.','Green Chem.',2008,'journal');
-INSERT INTO literature_ref(doi,title,authors,journal,year,ref_type) VALUES ('10.1021/ref0013xyz','Advances in isomerization catalysis: study 13','Cornils B., Herrmann W.','Organometallics',2024,'journal');
-INSERT INTO literature_ref(doi,title,authors,journal,year,ref_type) VALUES ('10.1021/ref0014xyz','Advances in hydroformylation catalysis: study 14','Beller M., Bolm C.','Angew. Chem. Int. Ed.',2002,'journal');
-INSERT INTO literature_ref(doi,title,authors,journal,year,ref_type) VALUES ('10.1021/ref0015xyz','Advances in isomerization catalysis: study 15','Nozaki K., Takaya H.','Angew. Chem. Int. Ed.',2011,'journal');
-INSERT INTO literature_ref(doi,title,authors,journal,year,ref_type) VALUES ('10.1021/ref0016xyz','Advances in hydroformylation catalysis: study 16','Beller M., Bolm C.','Catal. Sci. Technol.',2008,'journal');
-INSERT INTO literature_ref(doi,title,authors,journal,year,ref_type) VALUES ('10.1021/ref0017xyz','Advances in isomerization catalysis: study 17','Nozaki K., Takaya H.','Inorg. Chem.',2003,'thesis');
-INSERT INTO literature_ref(doi,title,authors,journal,year,ref_type) VALUES ('10.1021/ref0018xyz','Advances in hydroformylation catalysis: study 18','Franke R., van Leeuwen P.','Inorg. Chem.',2009,'book_chapter');
-INSERT INTO literature_ref(doi,title,authors,journal,year,ref_type) VALUES ('10.1021/ref0019xyz','Advances in isomerization catalysis: study 19','Claver C., Castillon S.','Green Chem.',2018,'patent');
-INSERT INTO literature_ref(doi,title,authors,journal,year,ref_type) VALUES ('10.1021/ref0020xyz','Advances in hydroformylation catalysis: study 20','Franke R., van Leeuwen P.','J. Am. Chem. Soc.',2021,'patent');
-
--- ================================================================
--- catalyst_support
--- ================================================================
-INSERT INTO catalyst_support(support_name,support_type,surface_area_m2g,pore_volume_cm3g,avg_pore_size_nm,supplier) VALUES ('SiO2-300','polymer',887.4,1.5685,13.26,'TCI');
-INSERT INTO catalyst_support(support_name,support_type,surface_area_m2g,pore_volume_cm3g,avg_pore_size_nm,supplier) VALUES ('Al2O3-gamma','polymer',435.4,1.5346,4.11,'Strem');
-INSERT INTO catalyst_support(support_name,support_type,surface_area_m2g,pore_volume_cm3g,avg_pore_size_nm,supplier) VALUES ('PS-DVB resin','alumina',619.6,1.3229,10.89,'Sigma-Aldrich');
-INSERT INTO catalyst_support(support_name,support_type,surface_area_m2g,pore_volume_cm3g,avg_pore_size_nm,supplier) VALUES ('UiO-66 MOF','carbon',589.7,1.0546,5.18,'TCI');
-INSERT INTO catalyst_support(support_name,support_type,surface_area_m2g,pore_volume_cm3g,avg_pore_size_nm,supplier) VALUES ('Activated Carbon','MOF',279.5,1.6806,10.95,'Alfa Aesar');
-INSERT INTO catalyst_support(support_name,support_type,surface_area_m2g,pore_volume_cm3g,avg_pore_size_nm,supplier) VALUES ('MCM-41','none',325.6,1.4293,2.73,'Sigma-Aldrich');
-INSERT INTO catalyst_support(support_name,support_type,surface_area_m2g,pore_volume_cm3g,avg_pore_size_nm,supplier) VALUES ('SBA-15','polymer',391.0,0.3059,13.87,'ACROS');
-INSERT INTO catalyst_support(support_name,support_type,surface_area_m2g,pore_volume_cm3g,avg_pore_size_nm,supplier) VALUES ('MIL-101(Cr)','none',317.5,1.2487,7.14,'TCI');
-INSERT INTO catalyst_support(support_name,support_type,surface_area_m2g,pore_volume_cm3g,avg_pore_size_nm,supplier) VALUES ('Amberlyst-15','alumina',275.1,0.5946,9.3,'Strem');
-INSERT INTO catalyst_support(support_name,support_type,surface_area_m2g,pore_volume_cm3g,avg_pore_size_nm,supplier) VALUES ('Norit carbon','none',546.9,1.6365,7.19,'Alfa Aesar');
-
--- ================================================================
--- supported_catalyst
--- ================================================================
-INSERT INTO supported_catalyst(precatalyst_id,support_id,metal_loading_wt_pct,immobilization_method,leaching_test_ppm) VALUES (18,5,4.858,'wet_impregnation',2.153);
-INSERT INTO supported_catalyst(precatalyst_id,support_id,metal_loading_wt_pct,immobilization_method,leaching_test_ppm) VALUES (66,2,3.44,'covalent_grafting',1.347);
-INSERT INTO supported_catalyst(precatalyst_id,support_id,metal_loading_wt_pct,immobilization_method,leaching_test_ppm) VALUES (64,6,0.647,'encapsulation',1.093);
-INSERT INTO supported_catalyst(precatalyst_id,support_id,metal_loading_wt_pct,immobilization_method,leaching_test_ppm) VALUES (12,1,4.774,'covalent_grafting',2.191);
-INSERT INTO supported_catalyst(precatalyst_id,support_id,metal_loading_wt_pct,immobilization_method,leaching_test_ppm) VALUES (97,9,3.834,'wet_impregnation',1.274);
-INSERT INTO supported_catalyst(precatalyst_id,support_id,metal_loading_wt_pct,immobilization_method,leaching_test_ppm) VALUES (7,5,4.224,'ion_exchange',1.274);
-INSERT INTO supported_catalyst(precatalyst_id,support_id,metal_loading_wt_pct,immobilization_method,leaching_test_ppm) VALUES (111,3,1.932,'co-precipitation',0.412);
-INSERT INTO supported_catalyst(precatalyst_id,support_id,metal_loading_wt_pct,immobilization_method,leaching_test_ppm) VALUES (15,1,3.035,'wet_impregnation',1.227);
-INSERT INTO supported_catalyst(precatalyst_id,support_id,metal_loading_wt_pct,immobilization_method,leaching_test_ppm) VALUES (20,6,4.406,'covalent_grafting',2.081);
-INSERT INTO supported_catalyst(precatalyst_id,support_id,metal_loading_wt_pct,immobilization_method,leaching_test_ppm) VALUES (81,4,0.384,'wet_impregnation',2.196);
-INSERT INTO supported_catalyst(precatalyst_id,support_id,metal_loading_wt_pct,immobilization_method,leaching_test_ppm) VALUES (21,2,3.686,'co-precipitation',2.042);
-INSERT INTO supported_catalyst(precatalyst_id,support_id,metal_loading_wt_pct,immobilization_method,leaching_test_ppm) VALUES (102,3,0.729,'co-precipitation',1.193);
-INSERT INTO supported_catalyst(precatalyst_id,support_id,metal_loading_wt_pct,immobilization_method,leaching_test_ppm) VALUES (88,3,1.399,'encapsulation',2.182);
-INSERT INTO supported_catalyst(precatalyst_id,support_id,metal_loading_wt_pct,immobilization_method,leaching_test_ppm) VALUES (55,4,4.652,'ion_exchange',1.891);
-INSERT INTO supported_catalyst(precatalyst_id,support_id,metal_loading_wt_pct,immobilization_method,leaching_test_ppm) VALUES (77,5,2.055,'covalent_grafting',1.683);
-INSERT INTO supported_catalyst(precatalyst_id,support_id,metal_loading_wt_pct,immobilization_method,leaching_test_ppm) VALUES (9,8,4.508,'ion_exchange',1.134);
-INSERT INTO supported_catalyst(precatalyst_id,support_id,metal_loading_wt_pct,immobilization_method,leaching_test_ppm) VALUES (50,4,0.414,'co-precipitation',0.062);
-INSERT INTO supported_catalyst(precatalyst_id,support_id,metal_loading_wt_pct,immobilization_method,leaching_test_ppm) VALUES (49,4,2.983,'wet_impregnation',0.028);
-INSERT INTO supported_catalyst(precatalyst_id,support_id,metal_loading_wt_pct,immobilization_method,leaching_test_ppm) VALUES (60,4,0.43,'covalent_grafting',0.088);
-INSERT INTO supported_catalyst(precatalyst_id,support_id,metal_loading_wt_pct,immobilization_method,leaching_test_ppm) VALUES (68,2,2.619,'encapsulation',0.703);
-
--- ================================================================
--- catalyst_stability
--- ================================================================
-INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (28,277,74.83,'leaching',56.86,3,88.45);
-INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (104,209,103.3,'ligand_dissociation',64.31,5,70.76);
-INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (60,28,339.95,'aggregation',13.86,6,85.68);
-INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (103,56,131.84,'sintering',53.27,2,70.67);
-INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (36,237,132.41,'ligand_dissociation',44.88,8,54.8);
-INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (84,277,419.65,'ligand_dissociation',88.37,3,58.15);
-INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (63,247,114.74,'oxidation',86.22,2,68.57);
-INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (50,136,463.99,'unknown',45.95,6,84.13);
-INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (94,285,334.32,'oxidation',18.93,4,60.67);
-INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (8,297,370.51,'ligand_dissociation',72.32,0,52.46);
-INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (62,258,460.5,'leaching',19.17,8,53.93);
-INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (24,36,301.57,'aggregation',82.56,6,55.87);
-INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (114,292,130.65,'leaching',8.58,1,70.54);
-INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (75,290,266.16,'poisoning',23.38,5,61.7);
-INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (51,68,339.13,'poisoning',46.15,1,50.46);
-INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (80,289,498.09,'ligand_dissociation',53.39,8,62.99);
-INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (120,179,441.62,'sintering',38.26,2,71.47);
-INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (70,155,309.72,'unknown',63.86,0,82.73);
-INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (71,154,466.56,'ligand_dissociation',89.5,2,62.96);
-INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (114,55,373.78,'sintering',29.51,9,60.32);
-INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (44,105,346.87,'unknown',28.76,7,62.3);
-INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (117,27,55.23,'oxidation',79.64,0,50.17);
-INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (99,67,322.19,'poisoning',19.54,7,77.03);
-INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (55,288,14.74,'ligand_dissociation',90.05,2,76.73);
-INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (107,190,295.43,'sintering',43.68,0,65.1);
-INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (116,21,450.47,'sintering',66.39,10,55.04);
-INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (100,287,443.23,'oxidation',92.65,2,95.36);
-INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (31,84,488.34,'unknown',20.93,6,51.21);
-INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (95,171,393.37,'oxidation',77.2,3,63.07);
-INSERT INTO catalyst_stability(precatalyst_id,assay_id,half_life_h,deactivation_mode,residual_activity_pct,recycle_number,activity_after_recycle_pct) VALUES (101,56,197.45,'ligand_dissociation',82.27,3,59.78);
-
--- ================================================================
--- assay_additive
--- ================================================================
-INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (236,'AgBF4','cocatalyst',0.6531,21.0113);
-INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (180,'Bu4NBr','promoter',1.4096,28.1662);
-INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (157,'DMAP','cocatalyst',0.8699,47.0778);
-INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (117,'HCl','acid',1.2503,15.7465);
-INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (115,'AgBF4','cocatalyst',1.6758,15.8899);
-INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (13,'DMAP','cocatalyst',0.8883,29.4193);
-INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (99,'NaOAc','base',0.9567,22.6658);
-INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (205,'DMAP','cocatalyst',1.0468,39.893);
-INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (169,'HCl','acid',1.3348,14.9055);
-INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (143,'CuI','cocatalyst',0.7036,41.1027);
-INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (36,'DMAP','cocatalyst',1.362,12.0074);
-INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (261,'DMAP','cocatalyst',0.3373,3.2645);
-INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (275,'BHT','inhibitor',1.242,38.656);
-INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (170,'BHT','inhibitor',0.8582,31.8585);
-INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (15,'DMAP','cocatalyst',1.4508,19.8149);
-INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (60,'Bu4NBr','promoter',0.5258,33.1468);
-INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (134,'PPh3','ligand_excess',1.7907,43.1616);
-INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (92,'Et3N','base',1.5679,11.7232);
-INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (298,'AgBF4','cocatalyst',0.9559,28.3129);
-INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (136,'Et3N','base',0.9401,40.2694);
-INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (20,'AgBF4','cocatalyst',1.9764,30.1772);
-INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (56,'BHT','inhibitor',1.2447,36.2444);
-INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (223,'AgBF4','cocatalyst',0.8821,45.4359);
-INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (177,'BHT','inhibitor',1.7996,37.4391);
-INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (161,'BHT','inhibitor',0.9276,37.8371);
-INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (224,'p-TsOH','acid',1.5433,26.5437);
-INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (262,'DMAP','cocatalyst',0.5855,4.7967);
-INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (198,'p-TsOH','acid',0.5073,17.4565);
-INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (296,'AgBF4','cocatalyst',0.2071,8.3907);
-INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (98,'Bu4NBr','promoter',1.4032,35.6145);
-INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (131,'Et3N','base',0.859,17.2132);
-INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (23,'BHT','inhibitor',0.8608,11.1349);
-INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (1,'Bu4NBr','promoter',0.8095,38.72);
-INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (267,'PPh3','ligand_excess',1.7206,38.5141);
-INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (276,'Bu4NBr','promoter',0.9801,47.1943);
-INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (101,'p-TsOH','acid',1.5193,42.8189);
-INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (187,'Bu4NBr','promoter',1.0995,36.9971);
-INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (221,'CuI','cocatalyst',1.8007,24.9232);
-INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (64,'p-TsOH','acid',0.8999,2.4222);
-INSERT INTO assay_additive(assay_id,additive_name,additive_role,amount_equiv,concentration_mM) VALUES (154,'NaOAc','base',1.3543,40.109);
-
--- ================================================================
--- isomerization_metrics
--- ================================================================
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (85,46.04,39.986,1.915797,'{"1-oct": 74.0, "2-oct": 26.4, "3-oct": 6.6}',409.709,1056.63);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (240,92.059,54.491,4.160666,'{"1-oct": 69.4, "2-oct": 29.3, "3-oct": 9.1}',568.7738,1334.69);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (66,80.615,47.672,2.469138,'{"1-oct": 50.7, "2-oct": 27.0, "3-oct": 17.5}',354.1038,2206.53);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (274,26.5,71.714,1.294931,'{"1-oct": 55.2, "2-oct": 10.6, "3-oct": 17.8}',377.1197,1850.48);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (14,33.638,24.848,4.009379,'{"1-oct": 68.0, "2-oct": 15.5, "3-oct": 5.2}',278.8677,2646.94);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (202,91.105,15.993,3.628366,'{"1-oct": 67.6, "2-oct": 22.9, "3-oct": 12.4}',395.9765,2286.59);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (289,79.47,16.514,1.185822,'{"1-oct": 63.3, "2-oct": 19.5, "3-oct": 13.0}',556.5119,953.31);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (43,51.913,62.215,1.720877,'{"1-oct": 50.1, "2-oct": 12.4, "3-oct": 7.9}',565.2554,849.2);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (220,28.967,47.51,3.834729,'{"1-oct": 59.4, "2-oct": 24.5, "3-oct": 19.6}',156.2684,688.33);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (70,59.348,29.81,0.592578,'{"1-oct": 47.2, "2-oct": 10.3, "3-oct": 13.0}',163.3529,721.08);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (237,40.573,78.201,2.811459,'{"1-oct": 74.7, "2-oct": 19.8, "3-oct": 18.1}',560.9597,422.52);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (94,63.055,42.858,2.258297,'{"1-oct": 77.6, "2-oct": 19.6, "3-oct": 17.3}',155.6473,201.56);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (26,50.053,15.186,3.184284,'{"1-oct": 62.5, "2-oct": 16.1, "3-oct": 19.9}',52.3512,490.13);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (134,28.884,63.511,3.070956,'{"1-oct": 60.9, "2-oct": 19.0, "3-oct": 11.6}',634.6853,715.78);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (195,84.512,79.302,1.596363,'{"1-oct": 69.6, "2-oct": 29.0, "3-oct": 8.1}',500.6116,1848.41);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (168,35.827,56.23,0.86958,'{"1-oct": 40.1, "2-oct": 19.0, "3-oct": 13.9}',147.3127,271.44);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (109,41.844,26.203,3.564084,'{"1-oct": 67.5, "2-oct": 28.5, "3-oct": 16.8}',565.3602,1389.39);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (233,66.879,56.283,4.674975,'{"1-oct": 65.9, "2-oct": 28.2, "3-oct": 17.4}',345.8598,1656.46);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (173,25.356,21.615,1.607298,'{"1-oct": 51.5, "2-oct": 12.5, "3-oct": 15.3}',601.6766,1729.16);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (143,72.48,75.987,2.552314,'{"1-oct": 41.6, "2-oct": 18.6, "3-oct": 9.8}',400.0982,287.3);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (216,38.778,16.393,4.813364,'{"1-oct": 78.0, "2-oct": 30.0, "3-oct": 15.1}',670.4073,1746.84);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (130,40.213,12.816,3.805717,'{"1-oct": 76.6, "2-oct": 13.6, "3-oct": 13.8}',381.6957,1971.95);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (42,67.609,44.421,0.547088,'{"1-oct": 66.8, "2-oct": 27.2, "3-oct": 9.9}',284.8892,1033.26);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (241,72.026,30.175,4.731448,'{"1-oct": 58.2, "2-oct": 16.3, "3-oct": 9.8}',652.7172,1672.78);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (10,92.764,38.292,2.621522,'{"1-oct": 61.7, "2-oct": 18.3, "3-oct": 7.8}',790.6142,1990.1);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (277,47.133,62.951,3.164503,'{"1-oct": 62.0, "2-oct": 28.6, "3-oct": 11.6}',610.3925,650.5);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (27,72.369,18.5,4.868419,'{"1-oct": 46.3, "2-oct": 21.0, "3-oct": 13.3}',491.0086,755.93);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (180,26.991,79.458,4.573356,'{"1-oct": 73.3, "2-oct": 20.0, "3-oct": 15.7}',374.5438,396.53);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (115,58.165,29.14,4.190147,'{"1-oct": 62.1, "2-oct": 17.7, "3-oct": 18.8}',784.3933,769.01);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (36,58.118,71.553,4.333732,'{"1-oct": 56.6, "2-oct": 28.7, "3-oct": 12.6}',228.2354,2380.52);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (21,81.541,29.799,1.562924,'{"1-oct": 59.6, "2-oct": 13.0, "3-oct": 13.1}',473.6808,2996.76);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (16,45.884,48.634,2.762807,'{"1-oct": 47.5, "2-oct": 23.9, "3-oct": 13.6}',369.7222,999.24);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (127,37.517,64.288,0.313872,'{"1-oct": 72.5, "2-oct": 17.7, "3-oct": 15.0}',598.3171,2130.42);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (103,81.556,78.657,2.52711,'{"1-oct": 63.6, "2-oct": 27.4, "3-oct": 18.1}',39.2455,1531.76);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (11,53.023,46.817,2.338948,'{"1-oct": 66.2, "2-oct": 13.1, "3-oct": 12.0}',580.7306,1259.44);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (79,92.69,33.699,3.494253,'{"1-oct": 74.1, "2-oct": 27.2, "3-oct": 10.7}',523.371,2562.71);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (123,43.75,60.31,3.821069,'{"1-oct": 42.7, "2-oct": 22.6, "3-oct": 18.8}',699.1826,155.9);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (65,94.807,62.274,2.22646,'{"1-oct": 74.9, "2-oct": 18.9, "3-oct": 15.4}',87.7701,1919.56);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (243,87.757,13.219,4.001103,'{"1-oct": 45.8, "2-oct": 20.6, "3-oct": 13.5}',241.7605,1155.78);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (59,79.439,21.899,0.486945,'{"1-oct": 49.6, "2-oct": 28.3, "3-oct": 7.1}',697.9633,1878.15);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (112,54.586,27.778,1.351101,'{"1-oct": 76.0, "2-oct": 23.6, "3-oct": 7.4}',17.424,2423.67);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (239,53.13,34.19,2.979101,'{"1-oct": 50.0, "2-oct": 26.9, "3-oct": 8.0}',514.7616,1301.71);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (132,48.852,43.825,1.262308,'{"1-oct": 79.7, "2-oct": 15.9, "3-oct": 19.7}',461.8189,1745.7);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (189,69.367,29.214,2.873052,'{"1-oct": 42.0, "2-oct": 22.1, "3-oct": 12.5}',551.7816,2246.77);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (86,87.812,30.034,4.014415,'{"1-oct": 65.5, "2-oct": 22.4, "3-oct": 15.2}',489.5813,1089.35);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (84,74.07,56.143,4.207852,'{"1-oct": 65.9, "2-oct": 16.2, "3-oct": 11.6}',506.316,2715.04);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (160,63.468,61.265,0.541654,'{"1-oct": 47.0, "2-oct": 12.6, "3-oct": 13.1}',243.1373,2255.07);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (56,92.862,47.16,4.576086,'{"1-oct": 73.0, "2-oct": 19.6, "3-oct": 17.1}',666.0734,808.06);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (297,75.992,33.71,0.664332,'{"1-oct": 78.7, "2-oct": 27.2, "3-oct": 15.9}',770.6857,465.23);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (295,93.496,77.709,4.042479,'{"1-oct": 40.6, "2-oct": 20.7, "3-oct": 11.8}',298.9623,2382.51);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (193,70.462,57.064,2.964344,'{"1-oct": 44.3, "2-oct": 14.7, "3-oct": 5.4}',659.7097,2823.86);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (204,86.318,49.299,4.584754,'{"1-oct": 73.0, "2-oct": 28.2, "3-oct": 9.5}',184.8801,236.49);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (102,50.622,19.784,4.736682,'{"1-oct": 43.9, "2-oct": 27.7, "3-oct": 7.0}',250.448,1503.24);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (39,54.023,56.934,3.741387,'{"1-oct": 69.7, "2-oct": 13.1, "3-oct": 11.2}',757.3195,1286.42);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (125,27.427,44.254,2.099768,'{"1-oct": 54.8, "2-oct": 18.9, "3-oct": 19.3}',761.702,146.51);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (53,84.159,16.955,3.459833,'{"1-oct": 54.3, "2-oct": 18.0, "3-oct": 7.8}',440.128,2934.64);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (155,29.162,69.362,2.328115,'{"1-oct": 63.9, "2-oct": 10.4, "3-oct": 16.8}',533.5873,1943.03);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (62,38.268,18.815,2.866432,'{"1-oct": 48.3, "2-oct": 14.3, "3-oct": 18.0}',64.202,2307.21);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (290,44.642,20.329,4.512602,'{"1-oct": 45.8, "2-oct": 12.6, "3-oct": 8.8}',12.2401,2582.3);
-INSERT INTO isomerization_metrics(assay_id,internal_olefin_conv_pct,terminal_olefin_selectivity_pct,double_bond_migration_rate_h_inv,isomer_distribution_json,tof_isomerization_h_inv,ton_isomerization) VALUES (22,33.087,56.274,0.226323,'{"1-oct": 49.5, "2-oct": 16.5, "3-oct": 7.6}',21.7397,2380.45);
-
--- ================================================================
--- tandem_metrics
--- ================================================================
-INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (18,42.763,84.624,8.193,283.1549,746.2408,'isomerization');
-INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (45,75.517,23.009,9.993,529.0696,684.0355,'isomerization');
-INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (244,50.105,77.166,6.5,499.9032,508.5397,'none');
-INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (144,26.656,44.873,10.144,237.0946,225.5348,'hydroformylation');
-INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (175,24.699,73.224,1.852,76.0074,899.6154,'isomerization');
-INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (40,58.946,56.053,8.643,211.1947,190.566,'hydroformylation');
-INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (245,81.153,80.879,6.633,551.1893,109.163,'hydroformylation');
-INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (23,62.029,39.615,8.88,143.3885,805.2467,'isomerization');
-INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (159,79.309,39.508,8.566,86.6335,370.3534,'isomerization');
-INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (151,76.505,74.161,14.631,494.6876,755.6093,'none');
-INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (254,58.972,57.63,10.039,422.2133,83.2962,'hydroformylation');
-INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (122,69.189,36.629,5.427,23.5414,1050.3421,'none');
-INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (171,66.014,19.871,11.244,583.65,155.5213,'none');
-INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (196,35.059,44.388,5.443,234.6308,879.8354,'none');
-INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (37,61.736,76.834,2.756,457.5728,107.2269,'isomerization');
-INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (152,39.047,61.336,7.542,276.3856,364.1419,'none');
-INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (167,27.967,45.094,4.607,413.522,609.6277,'none');
-INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (76,41.589,30.436,14.774,51.7735,285.0866,'isomerization');
-INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (203,73.714,68.491,4.697,89.5909,621.9931,'hydroformylation');
-INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (15,32.299,41.615,10.703,310.1522,1008.3573,'hydroformylation');
-INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (236,25.045,75.324,1.113,30.8701,1109.3368,'hydroformylation');
-INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (255,60.303,55.138,10.788,262.2625,182.4494,'isomerization');
-INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (215,87.634,27.031,14.24,286.8562,843.0515,'hydroformylation');
-INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (174,26.169,74.114,4.028,361.5453,652.5569,'hydroformylation');
-INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (104,80.937,67.206,3.713,471.8884,137.8363,'none');
-INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (154,27.982,50.697,13.636,222.6377,886.486,'none');
-INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (211,77.053,31.539,2.623,134.4176,742.7588,'none');
-INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (8,25.275,81.59,9.605,289.0928,698.2958,'none');
-INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (20,51.423,79.691,8.685,388.473,768.2,'none');
-INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (161,42.13,45.783,7.299,386.2034,965.7791,'none');
-INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (138,23.932,50.514,5.001,282.11,115.4236,'hydroformylation');
-INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (146,25.371,75.498,12.902,376.7049,633.128,'hydroformylation');
-INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (224,60.623,81.796,11.214,43.7932,1095.4075,'none');
-INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (282,65.629,37.507,7.397,107.4994,121.1548,'isomerization');
-INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (164,76.768,73.616,14.745,68.9109,793.0462,'isomerization');
-INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (231,37.342,45.643,6.872,323.1939,232.5581,'hydroformylation');
-INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (150,84.256,42.119,11.73,413.7607,110.2203,'none');
-INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (25,65.311,19.614,1.87,413.46,376.769,'none');
-INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (29,79.61,82.509,9.239,107.2165,143.7273,'none');
-INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (110,29.9,39.487,14.532,425.1184,500.7517,'none');
-INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (200,69.618,20.93,8.604,393.2261,427.748,'isomerization');
-INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (50,66.908,73.027,11.212,417.5404,655.3523,'none');
-INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (291,66.932,50.594,0.764,199.1423,1143.8447,'hydroformylation');
-INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (299,86.337,49.039,3.785,99.7879,138.7398,'isomerization');
-INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (95,55.538,52.784,11.21,325.3883,811.2186,'none');
-INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (206,29.173,41.37,2.853,502.1801,936.7625,'isomerization');
-INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (209,70.483,18.058,5.782,437.3597,1165.0269,'none');
-INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (192,39.945,67.398,7.009,329.7265,405.8881,'hydroformylation');
-INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (182,83.278,28.581,10.335,350.8432,556.687,'hydroformylation');
-INSERT INTO tandem_metrics(assay_id,overall_aldehyde_yield_pct,internal_olefin_to_aldehyde_conv_pct,lb_ratio_from_internal,iso_step_tof_h_inv,hf_step_tof_h_inv,bottleneck_step) VALUES (259,74.469,50.203,6.571,113.9937,279.6524,'none');
-
--- ================================================================
--- selectivity_profile
--- ================================================================
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (71,7,72.128,12.873,17.621429,'HPLC');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (129,1,77.47,16.583,38.959338,'NMR');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (247,7,93.197,43.589,9.122077,'GC-MS');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (191,5,6.931,70.081,22.889402,'HPLC');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (53,6,19.95,71.409,44.290661,'HPLC');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (265,7,88.737,46.869,49.456244,'NMR');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (64,3,24.811,68.043,9.563261,'HPLC');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (43,7,82.041,5.255,32.790011,'HPLC');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (83,3,12.701,33.754,44.475431,'NMR');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (231,5,85.096,35.411,48.686442,'NMR');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (76,7,66.054,33.694,39.866571,'HPLC');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (224,1,76.308,65.71,3.955561,'GC-MS');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (114,7,52.275,29.588,4.012645,'HPLC');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (231,3,29.811,54.633,21.311542,'NMR');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (14,4,34.045,4.77,43.503158,'HPLC');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (28,4,58.796,39.71,31.977071,'GC-FID');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (258,3,8.054,57.739,18.171923,'GC-MS');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (121,4,90.562,13.707,30.382569,'NMR');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (42,3,4.271,6.984,38.927984,'HPLC');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (115,1,35.042,85.503,1.628942,'GC-MS');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (164,1,64.832,85.445,18.606949,'GC-FID');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (172,7,54.949,48.122,19.907722,'HPLC');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (75,2,24.463,11.097,36.786386,'NMR');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (20,3,49.668,82.305,5.896872,'HPLC');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (242,6,67.18,20.097,30.59774,'NMR');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (72,7,19.817,13.08,3.711861,'GC-MS');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (241,4,85.476,40.615,4.398659,'HPLC');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (3,1,63.777,64.149,27.504357,'HPLC');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (10,3,84.785,76.771,35.593337,'GC-MS');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (111,7,75.607,46.279,6.076909,'GC-MS');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (77,5,75.454,22.07,24.706157,'HPLC');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (271,4,53.078,33.833,40.18505,'GC-MS');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (57,7,58.523,8.673,15.471443,'NMR');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (148,2,50.415,69.456,41.168737,'GC-FID');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (155,1,12.781,29.215,3.717509,'NMR');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (25,2,64.93,31.662,43.899228,'GC-MS');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (215,6,73.171,12.484,25.148161,'GC-FID');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (235,1,79.151,47.111,15.213186,'GC-MS');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (256,5,31.33,64.131,17.307694,'HPLC');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (275,1,80.518,23.304,31.756504,'HPLC');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (264,5,12.766,27.951,26.678567,'GC-MS');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (124,6,56.63,52.678,8.568319,'HPLC');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (74,3,80.198,51.162,41.263561,'GC-FID');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (220,1,8.635,85.421,38.553408,'HPLC');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (181,2,62.206,69.259,20.835173,'GC-FID');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (293,4,47.816,56.818,14.490686,'HPLC');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (96,6,46.397,72.617,34.252692,'HPLC');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (44,5,43.633,62.287,7.912442,'NMR');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (185,1,46.52,19.158,30.336947,'HPLC');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (270,5,81.98,29.419,49.401288,'HPLC');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (260,7,92.685,12.638,18.533305,'GC-FID');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (260,5,30.997,42.516,13.380909,'GC-MS');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (11,4,14.242,5.504,47.269791,'NMR');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (241,1,24.337,78.012,7.993386,'HPLC');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (199,3,88.773,65.18,9.499807,'GC-MS');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (130,6,47.837,46.811,24.942998,'HPLC');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (9,3,47.753,9.014,19.668177,'NMR');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (35,3,91.869,20.148,17.651225,'GC-FID');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (54,7,27.447,54.179,42.144054,'NMR');
-INSERT INTO selectivity_profile(assay_id,product_id,selectivity_pct,yield_pct,amount_mmol,quantification_method) VALUES (298,6,27.86,1.728,5.383779,'GC-MS');
-
--- ================================================================
--- kinetics_datapoint
+-- ==============================
+-- INSERT 22: kinetics_datapoint
 -- ================================================================
 INSERT INTO kinetics_datapoint(kinetics_id,assay_id,time_h,conversion_pct,rate_mmol_L_h,temp_c,pressure_bar,catalyst_conc_mM,substrate_conc_mM,product_conc_mM) VALUES (1,136,1.0,30.463,3.81951996,81.96,16.623,5.745788,46.984507,85.217324);
 INSERT INTO kinetics_datapoint(kinetics_id,assay_id,time_h,conversion_pct,rate_mmol_L_h,temp_c,pressure_bar,catalyst_conc_mM,substrate_conc_mM,product_conc_mM) VALUES (1,136,3.0,22.941,2.52177339,105.86,11.909,9.891998,139.275742,22.227598);
@@ -2740,6 +2535,235 @@ INSERT INTO kinetics_datapoint(kinetics_id,assay_id,time_h,conversion_pct,rate_m
 INSERT INTO kinetics_datapoint(kinetics_id,assay_id,time_h,conversion_pct,rate_mmol_L_h,temp_c,pressure_bar,catalyst_conc_mM,substrate_conc_mM,product_conc_mM) VALUES (80,2,1.0,5.446,0.44592519,66.63,23.392,4.99163,190.394743,118.031302);
 INSERT INTO kinetics_datapoint(kinetics_id,assay_id,time_h,conversion_pct,rate_mmol_L_h,temp_c,pressure_bar,catalyst_conc_mM,substrate_conc_mM,product_conc_mM) VALUES (80,2,3.0,23.002,3.61815767,114.29,26.129,4.621837,195.685281,43.298128);
 INSERT INTO kinetics_datapoint(kinetics_id,assay_id,time_h,conversion_pct,rate_mmol_L_h,temp_c,pressure_bar,catalyst_conc_mM,substrate_conc_mM,product_conc_mM) VALUES (80,2,6.0,37.254,4.06607889,112.45,34.238,3.666125,138.585641,66.769305);
+
+
+
+
+
+-- ===========================
+-- INSERT 14: dft_calculation
+-- ===========================
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (71,'Gaussian','B3LYP','def2-TZVP','optimization',-1479.073747,-1481.540619596649);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (82,'Gaussian','B3LYP','def2-TZVP','optimization',-1701.186916,-1702.5826494393623);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (7,'Gaussian','B3LYP','def2-TZVP','optimization',-1136.342334,-1139.164451509449);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (15,'Gaussian','B3LYP','def2-TZVP','optimization',-1764.034162,-1764.692545494279);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (2,'Gaussian','B3LYP','def2-TZVP','optimization',-1832.639644,-1834.8786435616157);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (16,'Gaussian','B3LYP','def2-TZVP','optimization',-1604.1917,-1606.7608066675687);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (6,'Gaussian','B3LYP','def2-TZVP','optimization',-1418.922977,-1417.015462854382);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (89,'Gaussian','B3LYP','def2-TZVP','optimization',-1403.787716,-1405.0737293669677);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (12,'Gaussian','B3LYP','def2-TZVP','optimization',-1751.277744,-1751.27855193415);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (88,'Gaussian','B3LYP','def2-TZVP','optimization',-1381.355142,-1377.0466541548137);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (98,'Gaussian','B3LYP','def2-TZVP','optimization',-1374.86767,-1379.2699186839059);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (83,'Gaussian','B3LYP','def2-TZVP','optimization',-1846.081565,-1845.7180317421976);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (14,'Gaussian','B3LYP','def2-TZVP','optimization',-1874.172542,-1876.8457956914394);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (72,'Gaussian','B3LYP','def2-TZVP','optimization',-1211.438174,-1208.871198767986);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (104,'Gaussian','B3LYP','def2-TZVP','optimization',-1108.204049,-1105.8721606824622);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (3,'Gaussian','B3LYP','def2-TZVP','optimization',-1310.75002,-1312.1683450274957);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (18,'Gaussian','B3LYP','def2-TZVP','optimization',-1749.303759,-1753.908873572845);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (91,'Gaussian','B3LYP','def2-TZVP','optimization',-1562.499996,-1564.552850035591);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (90,'Gaussian','B3LYP','def2-TZVP','optimization',-1509.908004,-1509.2409866603361);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (70,'Gaussian','B3LYP','def2-TZVP','optimization',-1652.335321,-1650.0112968987728);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (36,'Gaussian','B3LYP','def2-TZVP','optimization',-1132.33816,-1131.3513605576436);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (111,'Gaussian','B3LYP','def2-TZVP','optimization',-1445.47969,-1449.7909241663883);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (20,'Gaussian','B3LYP','def2-TZVP','optimization',-1550.6158,-1547.4216144850025);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (70,'Gaussian','B3LYP','def2-TZVP','optimization',-1632.887293,-1637.8800947127575);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (82,'Gaussian','B3LYP','def2-TZVP','optimization',-1494.042267,-1491.7056895856115);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (114,'Gaussian','B3LYP','def2-TZVP','optimization',-1981.280143,-1977.7118501166578);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (100,'Gaussian','B3LYP','def2-TZVP','optimization',-1379.802687,-1381.5957460569227);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (9,'Gaussian','B3LYP','def2-TZVP','optimization',-1341.710583,-1341.321017784066);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (50,'Gaussian','B3LYP','def2-TZVP','optimization',-1810.130548,-1808.2983061744233);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (99,'Gaussian','B3LYP','def2-TZVP','optimization',-1448.532193,-1447.4018005764947);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (42,'Gaussian','B3LYP','def2-TZVP','optimization',-1590.195472,-1591.9752314435168);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (13,'Gaussian','B3LYP','def2-TZVP','optimization',-1476.799461,-1481.1326625690374);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (107,'Gaussian','B3LYP','def2-TZVP','optimization',-1062.200463,-1065.4140749996388);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (5,'Gaussian','B3LYP','def2-TZVP','optimization',-1797.920971,-1798.067268127633);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (13,'Gaussian','B3LYP','def2-TZVP','optimization',-1968.18285,-1966.7653333187236);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (50,'Gaussian','B3LYP','def2-TZVP','optimization',-1342.078742,-1341.8205283738557);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (90,'Gaussian','B3LYP','def2-TZVP','optimization',-1409.699088,-1414.2082317275444);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (29,'Gaussian','B3LYP','def2-TZVP','optimization',-1394.046376,-1398.3376363904988);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (120,'Gaussian','B3LYP','def2-TZVP','optimization',-1078.964791,-1077.4072973810196);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (119,'Gaussian','B3LYP','def2-TZVP','optimization',-1110.232675,-1114.4331069676712);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (103,'Gaussian','B3LYP','def2-TZVP','optimization',-1361.083284,-1362.4740234887493);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (96,'Gaussian','B3LYP','def2-TZVP','optimization',-1061.756142,-1062.5966099729023);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (48,'Gaussian','B3LYP','def2-TZVP','optimization',-1205.750423,-1210.1674227555284);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (79,'Gaussian','B3LYP','def2-TZVP','optimization',-1734.184366,-1738.7778344772564);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (10,'Gaussian','B3LYP','def2-TZVP','optimization',-1165.543502,-1169.764148251395);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (28,'Gaussian','B3LYP','def2-TZVP','optimization',-1039.413255,-1043.4420624984234);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (93,'Gaussian','B3LYP','def2-TZVP','optimization',-1768.981997,-1770.1286861177402);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (25,'Gaussian','B3LYP','def2-TZVP','optimization',-1473.807978,-1476.3203477094598);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (81,'Gaussian','B3LYP','def2-TZVP','optimization',-1052.496655,-1051.9124201998702);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (72,'Gaussian','B3LYP','def2-TZVP','optimization',-1584.8154,-1588.7602581810083);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (82,'Gaussian','B3LYP','def2-TZVP','optimization',-1423.436341,-1421.691415362552);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (90,'Gaussian','B3LYP','def2-TZVP','optimization',-1334.757645,-1330.9294048062677);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (22,'Gaussian','B3LYP','def2-TZVP','optimization',-1207.538402,-1207.0387473342946);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (65,'Gaussian','B3LYP','def2-TZVP','optimization',-1662.487129,-1665.9053644410067);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (77,'Gaussian','B3LYP','def2-TZVP','optimization',-1556.98783,-1558.4645892472968);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (41,'Gaussian','B3LYP','def2-TZVP','optimization',-1449.918658,-1444.95015485825);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (109,'Gaussian','B3LYP','def2-TZVP','optimization',-1628.280488,-1625.6386443209565);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (56,'Gaussian','B3LYP','def2-TZVP','optimization',-1173.845025,-1175.6105157995155);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (31,'Gaussian','B3LYP','def2-TZVP','optimization',-1436.855297,-1439.7160156395628);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (99,'Gaussian','B3LYP','def2-TZVP','optimization',-1449.761294,-1447.315510514968);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (47,'Gaussian','B3LYP','def2-TZVP','optimization',-1038.348224,-1038.8732261100176);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (51,'Gaussian','B3LYP','def2-TZVP','optimization',-1999.804372,-2004.457742977718);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (37,'Gaussian','B3LYP','def2-TZVP','optimization',-1404.237173,-1404.0610794115967);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (114,'Gaussian','B3LYP','def2-TZVP','optimization',-1698.158346,-1700.1550063827183);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (29,'Gaussian','B3LYP','def2-TZVP','optimization',-1785.177187,-1787.0281402495066);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (99,'Gaussian','B3LYP','def2-TZVP','optimization',-1178.060078,-1176.1628861609056);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (36,'Gaussian','B3LYP','def2-TZVP','optimization',-1080.887917,-1080.7752021165888);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (74,'Gaussian','B3LYP','def2-TZVP','optimization',-1074.07755,-1077.5304021378124);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (5,'Gaussian','B3LYP','def2-TZVP','optimization',-1539.630194,-1543.0691229365405);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (34,'Gaussian','B3LYP','def2-TZVP','optimization',-1632.917107,-1632.0955499364013);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (30,'Gaussian','B3LYP','def2-TZVP','optimization',-1743.756162,-1745.753137683279);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (74,'Gaussian','B3LYP','def2-TZVP','optimization',-1600.201752,-1596.0229339665552);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (94,'Gaussian','B3LYP','def2-TZVP','optimization',-1922.798434,-1924.5515134595998);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (62,'Gaussian','B3LYP','def2-TZVP','optimization',-1827.097509,-1823.8404565561511);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (89,'Gaussian','B3LYP','def2-TZVP','optimization',-1297.152105,-1293.9569523516361);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (13,'Gaussian','B3LYP','def2-TZVP','optimization',-1404.768797,-1406.7648644615672);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (94,'Gaussian','B3LYP','def2-TZVP','optimization',-1191.658828,-1192.8433668950054);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (100,'Gaussian','B3LYP','def2-TZVP','optimization',-1944.077291,-1941.3682759632986);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (45,'Gaussian','B3LYP','def2-TZVP','optimization',-1120.207497,-1120.8644530306876);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (120,'Gaussian','B3LYP','def2-TZVP','optimization',-1132.168903,-1128.471037858788);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (30,'Gaussian','B3LYP','def2-TZVP','optimization',-1252.321343,-1248.826561326874);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (119,'Gaussian','B3LYP','def2-TZVP','optimization',-1988.565619,-1985.7914328185595);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (49,'Gaussian','B3LYP','def2-TZVP','optimization',-1945.872051,-1945.6282174848639);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (41,'Gaussian','B3LYP','def2-TZVP','optimization',-1460.070271,-1463.574470808327);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (65,'Gaussian','B3LYP','def2-TZVP','optimization',-1302.231347,-1305.6993721739532);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (87,'Gaussian','B3LYP','def2-TZVP','optimization',-1268.421426,-1269.4925989548099);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (58,'Gaussian','B3LYP','def2-TZVP','optimization',-1247.159797,-1246.4072484614992);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (12,'Gaussian','B3LYP','def2-TZVP','optimization',-1777.914372,-1780.0165417084331);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (51,'Gaussian','B3LYP','def2-TZVP','optimization',-1851.987599,-1853.6259172195914);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (61,'Gaussian','B3LYP','def2-TZVP','optimization',-1428.559409,-1433.066298019299);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (52,'Gaussian','B3LYP','def2-TZVP','optimization',-1737.442023,-1738.456752626341);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (56,'Gaussian','B3LYP','def2-TZVP','optimization',-1226.174863,-1229.8711112510482);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (18,'Gaussian','B3LYP','def2-TZVP','optimization',-1519.077498,-1522.0964127228108);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (51,'Gaussian','B3LYP','def2-TZVP','optimization',-1347.751561,-1350.790567996068);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (79,'Gaussian','B3LYP','def2-TZVP','optimization',-1002.921233,-1002.6787551772309);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (32,'Gaussian','B3LYP','def2-TZVP','optimization',-1928.35602,-1925.588301012083);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (42,'Gaussian','B3LYP','def2-TZVP','optimization',-1315.262028,-1314.5018456275498);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (15,'Gaussian','B3LYP','def2-TZVP','optimization',-1328.252447,-1329.0170409763437);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (45,'Gaussian','B3LYP','def2-TZVP','optimization',-1809.510258,-1811.065008904897);
+INSERT INTO dft_calculation(precatalyst_id,software,functional,basis_set,calculation_type,electronic_energy_hartree,gibbs_free_energy_hartree)
+VALUES (84,'Gaussian','B3LYP','def2-TZVP','optimization',-1975.79317,-1977.744981524536);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 -- ================================================================
 -- inhibition_study

@@ -2,7 +2,6 @@
 -- HYDROFORMYLATION AND ISOMERIZATION R&D DATABASE
 -- Covers: Catalysts, Reactions, Assays, Kinetics, DFT,
 --         Flow Chemistry, Scale-up, Reproducibility, Analytics
--- Suitable for BASF, Shell, SABIC, Dow, Aramco R&D pipelines
 -- ================================================================
 
 
@@ -56,8 +55,25 @@ CREATE TABLE ligand (
     KEY idx_ligand_class (ligand_class)
 ) COMMENT = 'Ancillary and spectator ligands used in the catalyst design';
 
+-- =================
+-- TABLE 3: solvent
+-- =================
+CREATE TABLE solvent (
+    solvent_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    solvent_name VARCHAR(150) NOT NULL,
+    abbreviation VARCHAR(20),
+    smiles TEXT,
+    boiling_point_c DECIMAL(7,2),
+    dielectric_constant DECIMAL(7,4),
+    polarity_class VARCHAR(50),
+    cas_number VARCHAR(30),
+    notes TEXT,
+    created_at DATETIME(0)  NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE KEY uq_solvent_name (solvent_name)
+);
+
 -- ===================
--- TABLE 3: substrate
+-- TABLE 4: substrate
 -- ===================
 CREATE TABLE substrate (
     substrate_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -78,24 +94,6 @@ CREATE TABLE substrate (
     CONSTRAINT chk_substrate_purity CHECK (purity_pct BETWEEN 0 AND 100),
     KEY idx_substrate_class (substrate_class)
 ) COMMENT = 'Olefin substrates (internal C4-C20, terminal, dienes) for iso/hydroformylation';
-
-
--- =================
--- TABLE 4: solvent
--- =================
-CREATE TABLE solvent (
-    solvent_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    solvent_name VARCHAR(150) NOT NULL,
-    abbreviation VARCHAR(20),
-    smiles TEXT,
-    boiling_point_c DECIMAL(7,2),
-    dielectric_constant DECIMAL(7,4),
-    polarity_class VARCHAR(50),
-    cas_number VARCHAR(30),
-    notes TEXT,
-    created_at DATETIME(0)  NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    UNIQUE KEY uq_solvent_name (solvent_name)
-);
 
 -- =================
 -- TABLE 5: product
@@ -136,7 +134,7 @@ CREATE TABLE literature_ref (
 );
 
 -- ====================
--- TABLE 6: researcher
+-- TABLE 7: researcher
 -- ====================
 CREATE TABLE researcher (
     researcher_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -161,7 +159,7 @@ CREATE TABLE researcher (
 -- ================================================================
 
 -- =====================
--- TABLE 7: precatalyst
+-- TABLE 8: precatalyst
 -- =====================
 
 CREATE TABLE precatalyst (
@@ -201,7 +199,7 @@ CREATE TABLE precatalyst (
 ) COMMENT = 'Central catalyst registry. Includes Rh/Co phosphine complexes for HF, and Pd/Ni/Fe/Rh complexes for isomerization and tandem catalysis.';
 
 -- ============================
--- TABLE 8: precatalyst_ligand
+-- TABLE 9: precatalyst_ligand
 -- ============================
 CREATE TABLE precatalyst_ligand (
     pl_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -217,7 +215,7 @@ CREATE TABLE precatalyst_ligand (
 );
 
 -- ==========================
--- TABLE 9: catalyst_support
+-- TABLE 10: catalyst_support
 -- ==========================
 CREATE TABLE catalyst_support (
     support_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -233,7 +231,7 @@ CREATE TABLE catalyst_support (
 );
 
 -- =============================
--- TABLE 10: supported_catalyst
+-- TABLE 11: supported_catalyst
 -- =============================
 CREATE TABLE supported_catalyst (
     supported_cat_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -250,7 +248,7 @@ CREATE TABLE supported_catalyst (
 );
 
 -- =============================
--- TABLE 11: catalyst_stability
+-- TABLE 12: catalyst_stability
 -- =============================
 CREATE TABLE catalyst_stability (
     stability_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -274,7 +272,7 @@ CREATE TABLE catalyst_stability (
 -- ================================================================
 
 -- ============================
--- TABLE 12: reaction_protocol
+-- TABLE 13: reaction_protocol
 -- ============================
 CREATE TABLE reaction_protocol (
     protocol_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -299,7 +297,7 @@ CREATE TABLE reaction_protocol (
 );
 
 -- =====================
--- TABLE 13: experiment
+-- TABLE 14: experiment
 -- =====================
 CREATE TABLE experiment (
     experiment_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -323,7 +321,7 @@ CREATE TABLE experiment (
 );
 
 -- ================
--- TABLE 14: assay
+-- TABLE 15: assay
 -- ================
 CREATE TABLE assay (
     assay_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -378,7 +376,7 @@ ALTER TABLE catalyst_stability
     ADD CONSTRAINT fk_stability_assay FOREIGN KEY (assay_id) REFERENCES assay(assay_id);
 
 -- =========================
--- TABLE 15: assay_additive
+-- TABLE 16: assay_additive
 -- =========================
 CREATE TABLE assay_additive (
     aa_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -397,7 +395,7 @@ CREATE TABLE assay_additive (
 -- ================================================================
 
 -- ==============================
--- TABLE 16: performance_metrics
+-- TABLE 17: performance_metrics
 -- ==============================
 CREATE TABLE performance_metrics (
     metric_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -439,7 +437,7 @@ CREATE TABLE performance_metrics (
 ) COMMENT = 'Core KPIs: conversion, selectivity (l/b ratio), TOF, TON, STY, E-factor';
 
 -- ================================
--- TABLE 17: isomerization_metrics
+-- TABLE 18: isomerization_metrics
 -- ================================
 CREATE TABLE isomerization_metrics (
     iso_metric_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -458,7 +456,7 @@ CREATE TABLE isomerization_metrics (
 );
 
 -- =========================
--- TABLE 18: tandem_metrics
+-- TABLE 19: tandem_metrics
 -- =========================
 CREATE TABLE tandem_metrics (
     tandem_metric_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -477,7 +475,7 @@ CREATE TABLE tandem_metrics (
 );
 
 -- ==============================
--- TABLE 19: selectivity_profile
+-- TABLE 20: selectivity_profile
 -- ==============================
 CREATE TABLE selectivity_profile (
     selectivity_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -500,7 +498,7 @@ CREATE TABLE selectivity_profile (
 -- ================================================================
 
 -- =========================
--- TABLE 20: kinetics_study
+-- TABLE 21: kinetics_study
 -- =========================
 CREATE TABLE kinetics_study (
     kinetics_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -533,7 +531,7 @@ CREATE TABLE kinetics_study (
 );
 
 -- =============================
--- TABLE 21: kinetics_datapoint
+-- TABLE 22: kinetics_datapoint
 -- =============================
 CREATE TABLE kinetics_datapoint (
     dp_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -553,7 +551,7 @@ CREATE TABLE kinetics_datapoint (
 );
 
 -- ===========================
--- TABLE 22: inhibition_study
+-- TABLE 23: inhibition_study
 -- ===========================
 CREATE TABLE inhibition_study (
     inhibition_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -574,7 +572,7 @@ CREATE TABLE inhibition_study (
 -- ================================================================
 
 -- ==============================
--- TABLE 23: flow_reactor_config
+-- TABLE 24: flow_reactor_config
 -- ==============================
 CREATE TABLE flow_reactor_config (
     config_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -595,7 +593,7 @@ CREATE TABLE flow_reactor_config (
 );
 
 -- =====================
--- TABLE 24: flow_assay
+-- TABLE 25: flow_assay
 -- =====================
 CREATE TABLE flow_assay (
     flow_assay_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -623,7 +621,7 @@ CREATE TABLE flow_assay (
 -- ================================================================
 
 -- ==========================
--- TABLE 25: dft_calculation
+-- TABLE 26: dft_calculation
 -- ==========================
 CREATE TABLE dft_calculation (
     dft_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -652,7 +650,7 @@ CREATE TABLE dft_calculation (
 );
 
 -- ===========================
--- TABLE 26: transition_state
+-- TABLE 27: transition_state
 -- ===========================
 CREATE TABLE transition_state (
     ts_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -670,7 +668,7 @@ CREATE TABLE transition_state (
 );
 
 -- ================================
--- TABLE 27: electronic_descriptor
+-- TABLE 28: electronic_descriptor
 -- ================================
 CREATE TABLE electronic_descriptor (
     descriptor_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -693,7 +691,7 @@ CREATE TABLE electronic_descriptor (
 );
 
 -- ==========================
--- TABLE 28: qsar_qspr_model
+-- TABLE 29: qsar_qspr_model
 -- ==========================
 CREATE TABLE qsar_qspr_model (
     model_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -717,7 +715,7 @@ CREATE TABLE qsar_qspr_model (
 );
 
 -- =========================
--- TABLE 29: qsar_datapoint
+-- TABLE 30: qsar_datapoint
 -- =========================
 CREATE TABLE qsar_datapoint (
     qdp_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -741,7 +739,7 @@ CREATE TABLE qsar_datapoint (
 -- ================================================================
 
 -- =========================
--- TABLE 30: scale_up_study
+-- TABLE 31: scale_up_study
 -- =========================
 CREATE TABLE scale_up_study (
     scaleup_id INT  NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -773,7 +771,7 @@ CREATE TABLE scale_up_study (
 );
 
 -- ================================
--- TABLE 31: reproducibility_study
+-- TABLE 32: reproducibility_study
 -- ================================
 CREATE TABLE reproducibility_study (
     repro_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -802,7 +800,7 @@ CREATE TABLE reproducibility_study (
 -- ================================================================
 
 -- ====================================
--- TABLE 32: catalyst_characterization
+-- TABLE 33: catalyst_characterization
 -- ====================================
 CREATE TABLE catalyst_characterization (
     char_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -823,7 +821,7 @@ CREATE TABLE catalyst_characterization (
 );
 
 -- ===================
--- TABLE 33: nmr_data
+-- TABLE 34: nmr_data
 -- ===================
 CREATE TABLE nmr_data (
     nmr_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -841,7 +839,7 @@ CREATE TABLE nmr_data (
 );
 
 -- ==================
--- TABLE 34: ir_data
+-- TABLE 35: ir_data
 -- ==================
 CREATE TABLE ir_data (
     ir_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -857,7 +855,7 @@ CREATE TABLE ir_data (
 );
 
 -- =======================
--- TABLE 35: hp_ir_insitu
+-- TABLE 36: hp_ir_insitu
 -- =======================
 CREATE TABLE hp_ir_insitu (
     hpir_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -879,7 +877,7 @@ CREATE TABLE hp_ir_insitu (
 -- ================================================================
 
 -- ====================
--- TABLE 36: data_file
+-- TABLE 37: data_file
 -- ====================
 CREATE TABLE data_file (
     file_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -898,7 +896,7 @@ CREATE TABLE data_file (
 );
 
 -- ===============================
--- TABLE 37: benchmark_comparison
+-- TABLE 38: benchmark_comparison
 -- ===============================
 CREATE TABLE benchmark_comparison (
     bench_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -924,7 +922,7 @@ CREATE TABLE benchmark_comparison (
 );
 
 -- ====================
--- TABLE 38: audit_log
+-- TABLE 39: audit_log
 -- ====================
 CREATE TABLE audit_log (
     log_id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
